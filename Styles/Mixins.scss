@@ -1,0 +1,9 @@
+@mixin StandarFlexOptions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@mixin StandardBorder($widthOfBorder, $colorOfBorder, $radiusSize) {
+    border: $widthOfBorder solid $colorOfBorder;
+    border-radius: $radiusSize;
+}
