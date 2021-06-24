@@ -1,11 +1,14 @@
 import {DrumCell} from './CreateDrumCell';
+import { TitleArray } from './DataArrays';
 export class DrumPanel{
     allPageContainer: HTMLDivElement;
     logo: HTMLImageElement;
     drumBoard: HTMLDivElement;
     playField : HTMLDivElement;
     recordField: HTMLDivElement;
-    cells: DrumCell;
+    cell: DrumCell;
+    titleCell: HTMLHeadingElement;
+    infoCell: HTMLParagraphElement;
 
     constructor(){
         this.allPageContainer = document.createElement('div');
@@ -33,8 +36,21 @@ export class DrumPanel{
     }
 
     createCells(): void{
+        
         for (let index = 0; index < 9; index++) {
-            this.playField.appendChild(new DrumCell().singleCell);
+            this.cell = new DrumCell();
+            this.cell.singleCell.id = `${index}`;
+            this.playField.appendChild(this.cell.singleCell);
+            this.addTextToCells(index);
         }
+    }
+    addTextToCells(index: number): void{
+        this.titleCell = document.createElement('h5');
+        this.titleCell.innerHTML = TitleArray[index].Name;
+        this.cell.singleCell.appendChild(this.titleCell);
+
+        this.infoCell = document.createElement('p');
+        this.infoCell.innerHTML = TitleArray[index].Info;
+        this.cell.singleCell.appendChild(this.infoCell);
     }
 }

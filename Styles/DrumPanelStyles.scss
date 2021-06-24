@@ -25,10 +25,10 @@
     height: 90%;
     padding: 5px;
     @include StandarFlexOptions;
-    background-color: red;
 }
 .play-field{
     width: 50%;
+    padding: 0px 5px;
     margin-right: 100px;
     flex-wrap: wrap;
 }

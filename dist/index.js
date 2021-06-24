@@ -21,7 +21,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".all-page-container {\n  width: 100%;\n  height: 100vh;\n  overflow: hidden;\n  background-color: #3f3f3f;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n\n.logo {\n  width: 200px;\n  height: 70px;\n  position: absolute;\n  top: 20px;\n}\n\n.drum-board {\n  width: 70%;\n  height: 70%;\n  margin-top: 100px;\n  padding: 10px;\n  border: 2px solid #ffffff;\n  border-radius: 10px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n\n.play-field, .record-field {\n  height: 90%;\n  padding: 5px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  background-color: red;\n}\n\n.play-field {\n  width: 50%;\n  margin-right: 100px;\n  flex-wrap: wrap;\n}\n\n.record-field {\n  width: 30%;\n  background-color: #8cc534;\n  border: 0px solid #8cc534;\n  border-radius: 10px;\n}", "",{"version":3,"sources":["webpack://./Styles/DrumPanelStyles.scss","webpack://./Styles/Colors.scss","webpack://./Styles/Mixins.scss"],"names":[],"mappings":"AAEA;EACI,WAAA;EACA,aAAA;EACA,gBAAA;EACA,yBCNkB;ECClB,aAAA;EACA,uBAAA;EACA,mBAAA;AFKJ;;AACA;EACI,YAAA;EACA,YAAA;EACA,kBAAA;EACA,SAAA;AAEJ;;AAAA;EACI,UAAA;EACA,WAAA;EACA,iBAAA;EACA,aAAA;EEbA,yBAAA;EACA,mBFa6C;EEnB7C,aAAA;EACA,uBAAA;EACA,mBAAA;AFwBJ;;AAJA;EACI,WAAA;EACA,YAAA;EExBA,aAAA;EACA,uBAAA;EACA,mBAAA;EFwBA,qBAAA;AASJ;;AAPA;EACI,UAAA;EACA,mBAAA;EACA,eAAA;AAUJ;;AARA;EACI,UAAA;EACA,yBCnCS;ECKT,yBAAA;EACA,mBF8B0C;AAY9C","sourcesContent":["@import './Colors.scss';\r\n@import './Mixins.scss';\r\n.all-page-container{\r\n    width: 100%;\r\n    height: 100vh;\r\n    overflow: hidden;\r\n    background-color: $mainBackGroundColor;\r\n    @include StandarFlexOptions;\r\n}\r\n.logo{\r\n    width: 200px;\r\n    height: 70px;\r\n    position: absolute;\r\n    top: 20px;\r\n}\r\n.drum-board{\r\n    width: 70%;\r\n    height: 70%;\r\n    margin-top: 100px;\r\n    padding: 10px;\r\n    @include StandardBorder(2px, $optionalWhite, 10px);\r\n    @include StandarFlexOptions;\r\n}\r\n.play-field, .record-field{\r\n    height: 90%;\r\n    padding: 5px;\r\n    @include StandarFlexOptions;\r\n    background-color: red;\r\n}\r\n.play-field{\r\n    width: 50%;\r\n    margin-right: 100px;\r\n    flex-wrap: wrap;\r\n}\r\n.record-field{\r\n    width: 30%;\r\n    background-color: $lightGreen;\r\n    @include StandardBorder(0px, $lightGreen, 10px);\r\n}","$mainBackGroundColor: #3f3f3f;\r\n$lightGreen: #8cc534;\r\n$contrastBlack: #202020;\r\n$optionalWhite: #ffffff;","@mixin StandarFlexOptions {\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n}\r\n@mixin StandardBorder($widthOfBorder, $colorOfBorder, $radiusSize) {\r\n    border: $widthOfBorder solid $colorOfBorder;\r\n    border-radius: $radiusSize;\r\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, ".all-page-container {\n  width: 100%;\n  height: 100vh;\n  overflow: hidden;\n  background-color: #3f3f3f;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n\n.logo {\n  width: 200px;\n  height: 70px;\n  position: absolute;\n  top: 20px;\n}\n\n.drum-board {\n  width: 70%;\n  height: 70%;\n  margin-top: 100px;\n  padding: 10px;\n  border: 2px solid #ffffff;\n  border-radius: 10px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n\n.play-field, .record-field {\n  height: 90%;\n  padding: 5px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n\n.play-field {\n  width: 50%;\n  padding: 0px 5px;\n  margin-right: 100px;\n  flex-wrap: wrap;\n}\n\n.record-field {\n  width: 30%;\n  background-color: #8cc534;\n  border: 0px solid #8cc534;\n  border-radius: 10px;\n}", "",{"version":3,"sources":["webpack://./Styles/DrumPanelStyles.scss","webpack://./Styles/Colors.scss","webpack://./Styles/Mixins.scss"],"names":[],"mappings":"AAEA;EACI,WAAA;EACA,aAAA;EACA,gBAAA;EACA,yBCNkB;ECClB,aAAA;EACA,uBAAA;EACA,mBAAA;AFKJ;;AACA;EACI,YAAA;EACA,YAAA;EACA,kBAAA;EACA,SAAA;AAEJ;;AAAA;EACI,UAAA;EACA,WAAA;EACA,iBAAA;EACA,aAAA;EEbA,yBAAA;EACA,mBFa6C;EEnB7C,aAAA;EACA,uBAAA;EACA,mBAAA;AFwBJ;;AAJA;EACI,WAAA;EACA,YAAA;EExBA,aAAA;EACA,uBAAA;EACA,mBAAA;AFgCJ;;AAPA;EACI,UAAA;EACA,gBAAA;EACA,mBAAA;EACA,eAAA;AAUJ;;AARA;EACI,UAAA;EACA,yBCnCS;ECKT,yBAAA;EACA,mBF8B0C;AAY9C","sourcesContent":["@import './Colors.scss';\r\n@import './Mixins.scss';\r\n.all-page-container{\r\n    width: 100%;\r\n    height: 100vh;\r\n    overflow: hidden;\r\n    background-color: $mainBackGroundColor;\r\n    @include StandarFlexOptions;\r\n}\r\n.logo{\r\n    width: 200px;\r\n    height: 70px;\r\n    position: absolute;\r\n    top: 20px;\r\n}\r\n.drum-board{\r\n    width: 70%;\r\n    height: 70%;\r\n    margin-top: 100px;\r\n    padding: 10px;\r\n    @include StandardBorder(2px, $optionalWhite, 10px);\r\n    @include StandarFlexOptions;\r\n}\r\n.play-field, .record-field{\r\n    height: 90%;\r\n    padding: 5px;\r\n    @include StandarFlexOptions;\r\n}\r\n.play-field{\r\n    width: 50%;\r\n    padding: 0px 5px;\r\n    margin-right: 100px;\r\n    flex-wrap: wrap;\r\n}\r\n.record-field{\r\n    width: 30%;\r\n    background-color: $lightGreen;\r\n    @include StandardBorder(0px, $lightGreen, 10px);\r\n}","$mainBackGroundColor: #3f3f3f;\r\n$lightGreen: #8cc534;\r\n$contrastBlack: #202020;\r\n$optionalWhite: #ffffff;","@mixin StandarFlexOptions {\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n}\r\n@mixin StandardBorder($widthOfBorder, $colorOfBorder, $radiusSize) {\r\n    border: $widthOfBorder solid $colorOfBorder;\r\n    border-radius: $radiusSize;\r\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -47,7 +47,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".single-cell {\n  width: 130px;\n  height: 130px;\n  margin: 10px;\n  background-color: #202020;\n}", "",{"version":3,"sources":["webpack://./Styles/SingleCell.scss","webpack://./Styles/Colors.scss"],"names":[],"mappings":"AACA;EACI,YAAA;EACA,aAAA;EACA,YAAA;EACA,yBCHY;ADGhB","sourcesContent":["@import './Colors.scss';\r\n.single-cell{\r\n    width: 130px;\r\n    height: 130px;\r\n    margin: 10px;\r\n    background-color: $contrastBlack;\r\n}","$mainBackGroundColor: #3f3f3f;\r\n$lightGreen: #8cc534;\r\n$contrastBlack: #202020;\r\n$optionalWhite: #ffffff;"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, ".single-cell {\n  width: calc((100% - 70px) / 3);\n  height: calc((100% - 70px) / 3);\n  box-sizing: border-box;\n  margin: 10px;\n  padding: 10px 5px;\n  background-color: #202020;\n  color: #ffffff;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-wrap: wrap;\n  border-radius: 10px;\n}\n.single-cell h5, .single-cell p {\n  width: 100%;\n  text-align: center;\n  margin: 0;\n}\n.single-cell h5 {\n  font-family: \"Grandstander\", cursive;\n  font-size: 1.8vw;\n}\n.single-cell p {\n  font-family: \"Rubik\", sans-serif;\n  font-size: 1.5vw;\n}", "",{"version":3,"sources":["webpack://./Styles/SingleCell.scss","webpack://./Styles/Colors.scss","webpack://./Styles/Mixins.scss"],"names":[],"mappings":"AAEA;EACI,8BAAA;EACA,+BAAA;EACA,sBAAA;EACA,YAAA;EACA,iBAAA;EACA,yBCNY;EDOZ,cCNY;ECFZ,aAAA;EACA,uBAAA;EACA,mBAAA;EFQA,eAAA;EACA,mBAAA;AACJ;AAAI;EACI,WAAA;EACA,kBAAA;EACA,SAAA;AAER;AAAI;EACI,oCAAA;EACA,gBAAA;AAER;AAAI;EACI,gCAAA;EACA,gBAAA;AAER","sourcesContent":["@import './Colors.scss';\r\n@import './Mixins.scss';\r\n.single-cell{\r\n    width: calc((100% - 70px) / 3);\r\n    height: calc((100% - 70px) / 3);\r\n    box-sizing: border-box;\r\n    margin: 10px;\r\n    padding: 10px 5px;\r\n    background-color: $contrastBlack;\r\n    color: $optionalWhite;\r\n    @include StandarFlexOptions;\r\n    flex-wrap: wrap;\r\n    border-radius: 10px;\r\n    h5, p{\r\n        width: 100%;\r\n        text-align: center;\r\n        margin: 0;\r\n    }\r\n    h5{\r\n        font-family: 'Grandstander', cursive;\r\n        font-size: 1.8vw;\r\n    }\r\n    p{\r\n        font-family: 'Rubik', sans-serif;\r\n        font-size: 1.5vw;\r\n    }\r\n}","$mainBackGroundColor: #3f3f3f;\r\n$lightGreen: #8cc534;\r\n$contrastBlack: #202020;\r\n$optionalWhite: #ffffff;","@mixin StandarFlexOptions {\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n}\r\n@mixin StandardBorder($widthOfBorder, $colorOfBorder, $radiusSize) {\r\n    border: $widthOfBorder solid $colorOfBorder;\r\n    border-radius: $radiusSize;\r\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -593,6 +593,7 @@ exports.DrumCell = DrumCell;
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.DrumPanel = void 0;
 var CreateDrumCell_1 = __webpack_require__(/*! ./CreateDrumCell */ "./Main/CreateDrumCell.ts");
+var DataArrays_1 = __webpack_require__(/*! ./DataArrays */ "./Main/DataArrays.ts");
 var DrumPanel = (function () {
     function DrumPanel() {
         this.allPageContainer = document.createElement('div');
@@ -615,12 +616,47 @@ var DrumPanel = (function () {
     }
     DrumPanel.prototype.createCells = function () {
         for (var index = 0; index < 9; index++) {
-            this.playField.appendChild(new CreateDrumCell_1.DrumCell().singleCell);
+            this.cell = new CreateDrumCell_1.DrumCell();
+            this.cell.singleCell.id = "" + index;
+            this.playField.appendChild(this.cell.singleCell);
+            this.addTextToCells(index);
         }
+    };
+    DrumPanel.prototype.addTextToCells = function (index) {
+        this.titleCell = document.createElement('h5');
+        this.titleCell.innerHTML = DataArrays_1.TitleArray[index].Name;
+        this.cell.singleCell.appendChild(this.titleCell);
+        this.infoCell = document.createElement('p');
+        this.infoCell.innerHTML = DataArrays_1.TitleArray[index].Info;
+        this.cell.singleCell.appendChild(this.infoCell);
     };
     return DrumPanel;
 }());
 exports.DrumPanel = DrumPanel;
+
+
+/***/ }),
+
+/***/ "./Main/DataArrays.ts":
+/*!****************************!*\
+  !*** ./Main/DataArrays.ts ***!
+  \****************************/
+/***/ ((__unused_webpack_module, exports) => {
+
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.TitleArray = void 0;
+exports.TitleArray = [
+    { Name: 'KICK', Info: 'Press Q', Index: 0 },
+    { Name: 'TOM', Info: 'Press W', Index: 1 },
+    { Name: 'SNARE', Info: 'Press E', Index: 2 },
+    { Name: 'CLOSED HITHAT', Info: 'Press R', Index: 3 },
+    { Name: 'OPEN HITHAT', Info: 'Press T', Index: 4 },
+    { Name: 'STANDARD RIDE', Info: 'Press Y', Index: 5 },
+    { Name: 'BOOM', Info: 'Press U', Index: 6 },
+    { Name: 'TINK', Info: 'Press I', Index: 7 },
+    { Name: 'CLAP', Info: 'Press O', Index: 8 },
+];
 
 
 /***/ })
