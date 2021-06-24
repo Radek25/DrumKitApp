@@ -1,5 +1,6 @@
 import {DrumCell} from './CreateDrumCell';
 import { TitleArray } from './DataArrays';
+import { SoundArray } from './DataArrays';
 export class DrumPanel{
     allPageContainer: HTMLDivElement;
     logo: HTMLImageElement;
@@ -9,6 +10,7 @@ export class DrumPanel{
     cell: DrumCell;
     titleCell: HTMLHeadingElement;
     infoCell: HTMLParagraphElement;
+    audioCell: HTMLAudioElement;
 
     constructor(){
         this.allPageContainer = document.createElement('div');
@@ -33,15 +35,18 @@ export class DrumPanel{
         this.drumBoard.appendChild(this.recordField);
 
         this.createCells();
+        this.playSound();
+        this.pauseSound();
     }
 
     createCells(): void{
         
         for (let index = 0; index < 9; index++) {
             this.cell = new DrumCell();
-            this.cell.singleCell.id = `${index}`;
+            this.cell.singleCell.id = `c${index}`;
             this.playField.appendChild(this.cell.singleCell);
             this.addTextToCells(index);
+            this.addSoundToCells(index);
         }
     }
     addTextToCells(index: number): void{
@@ -52,5 +57,32 @@ export class DrumPanel{
         this.infoCell = document.createElement('p');
         this.infoCell.innerHTML = TitleArray[index].Info;
         this.cell.singleCell.appendChild(this.infoCell);
+    }
+    addSoundToCells(index: number){
+        this.audioCell = document.createElement('audio');
+        this.audioCell.setAttribute('src', SoundArray[index].Src);
+        this.audioCell.classList.add('audio'+index);
+        this.cell.singleCell.appendChild(this.audioCell);
+    }
+    playSound(){
+        window.addEventListener('keydown', function(e){
+            let cellIndex: number = SoundArray.find(SoundArray => SoundArray.KeyCode === e.keyCode).Index;
+            let keyDownFinder: string = SoundArray.find(SoundArray => SoundArray.KeyCode === e.keyCode).Id;
+            let playingCell: HTMLAudioElement = document.querySelector(`${keyDownFinder}`);
+            let backgroundColorOfCell: HTMLElement = document.querySelector('#c'+cellIndex);
+            backgroundColorOfCell.style.backgroundColor = '#8cc534';
+            playingCell.play();
+        })
+    }
+    pauseSound(){
+        window.addEventListener('keyup', function(e){
+            let cellIndex: number = SoundArray.find(SoundArray => SoundArray.KeyCode === e.keyCode).Index;
+            let keyDownFinder: string = SoundArray.find(SoundArray => SoundArray.KeyCode === e.keyCode).Id;
+            let playingCell: HTMLAudioElement = document.querySelector(`${keyDownFinder}`);
+            let backgroundColorOfCell: HTMLElement = document.querySelector('#c'+cellIndex);
+            backgroundColorOfCell.style.backgroundColor = '#202020';
+            playingCell.pause();
+            playingCell.currentTime = 0;
+        })
     }
 }

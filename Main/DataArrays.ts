@@ -9,3 +9,14 @@ export const TitleArray = [
     {Name: 'TINK', Info: 'Press I', Index: 7},
     {Name: 'CLAP', Info: 'Press O', Index: 8},
 ];
+export const SoundArray = [
+    {KeyCode: 81, Src: '../Sounds/kick.wav', Index: 0, Id: '.audio0'},
+    {KeyCode: 87, Src: '../Sounds/tom.wav', Index: 1, Id: '.audio1'},
+    {KeyCode: 69, Src: '../Sounds/snare.wav', Index: 2, Id: '.audio2'},
+    {KeyCode: 82, Src: '../Sounds/hihat.wav', Index: 3, Id: '.audio3'},
+    {KeyCode: 84, Src: '../Sounds/openhat.wav', Index: 4, Id: '.audio4'},
+    {KeyCode: 89, Src: '../Sounds/ride.wav', Index: 5, Id: '.audio5'},
+    {KeyCode: 85, Src: '../Sounds/boom.wav', Index: 6, Id: '.audio6'},
+    {KeyCode: 73, Src: '../Sounds/tink.wav', Index: 7, Id: '.audio7'},
+    {KeyCode: 79, Src: '../Sounds/clap.wav', Index: 8, Id: '.audio8'},
+]

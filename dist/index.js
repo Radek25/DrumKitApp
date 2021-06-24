@@ -594,6 +594,7 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.DrumPanel = void 0;
 var CreateDrumCell_1 = __webpack_require__(/*! ./CreateDrumCell */ "./Main/CreateDrumCell.ts");
 var DataArrays_1 = __webpack_require__(/*! ./DataArrays */ "./Main/DataArrays.ts");
+var DataArrays_2 = __webpack_require__(/*! ./DataArrays */ "./Main/DataArrays.ts");
 var DrumPanel = (function () {
     function DrumPanel() {
         this.allPageContainer = document.createElement('div');
@@ -613,13 +614,16 @@ var DrumPanel = (function () {
         this.recordField.classList.add('record-field');
         this.drumBoard.appendChild(this.recordField);
         this.createCells();
+        this.playSound();
+        this.pauseSound();
     }
     DrumPanel.prototype.createCells = function () {
         for (var index = 0; index < 9; index++) {
             this.cell = new CreateDrumCell_1.DrumCell();
-            this.cell.singleCell.id = "" + index;
+            this.cell.singleCell.id = "c" + index;
             this.playField.appendChild(this.cell.singleCell);
             this.addTextToCells(index);
+            this.addSoundToCells(index);
         }
     };
     DrumPanel.prototype.addTextToCells = function (index) {
@@ -629,6 +633,33 @@ var DrumPanel = (function () {
         this.infoCell = document.createElement('p');
         this.infoCell.innerHTML = DataArrays_1.TitleArray[index].Info;
         this.cell.singleCell.appendChild(this.infoCell);
+    };
+    DrumPanel.prototype.addSoundToCells = function (index) {
+        this.audioCell = document.createElement('audio');
+        this.audioCell.setAttribute('src', DataArrays_2.SoundArray[index].Src);
+        this.audioCell.classList.add('audio' + index);
+        this.cell.singleCell.appendChild(this.audioCell);
+    };
+    DrumPanel.prototype.playSound = function () {
+        window.addEventListener('keydown', function (e) {
+            var cellIndex = DataArrays_2.SoundArray.find(function (SoundArray) { return SoundArray.KeyCode === e.keyCode; }).Index;
+            var keyDownFinder = DataArrays_2.SoundArray.find(function (SoundArray) { return SoundArray.KeyCode === e.keyCode; }).Id;
+            var playingCell = document.querySelector("" + keyDownFinder);
+            var backgroundColorOfCell = document.querySelector('#c' + cellIndex);
+            backgroundColorOfCell.style.backgroundColor = '#8cc534';
+            playingCell.play();
+        });
+    };
+    DrumPanel.prototype.pauseSound = function () {
+        window.addEventListener('keyup', function (e) {
+            var cellIndex = DataArrays_2.SoundArray.find(function (SoundArray) { return SoundArray.KeyCode === e.keyCode; }).Index;
+            var keyDownFinder = DataArrays_2.SoundArray.find(function (SoundArray) { return SoundArray.KeyCode === e.keyCode; }).Id;
+            var playingCell = document.querySelector("" + keyDownFinder);
+            var backgroundColorOfCell = document.querySelector('#c' + cellIndex);
+            backgroundColorOfCell.style.backgroundColor = '#202020';
+            playingCell.pause();
+            playingCell.currentTime = 0;
+        });
     };
     return DrumPanel;
 }());
@@ -645,7 +676,7 @@ exports.DrumPanel = DrumPanel;
 
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.TitleArray = void 0;
+exports.SoundArray = exports.TitleArray = void 0;
 exports.TitleArray = [
     { Name: 'KICK', Info: 'Press Q', Index: 0 },
     { Name: 'TOM', Info: 'Press W', Index: 1 },
@@ -656,6 +687,17 @@ exports.TitleArray = [
     { Name: 'BOOM', Info: 'Press U', Index: 6 },
     { Name: 'TINK', Info: 'Press I', Index: 7 },
     { Name: 'CLAP', Info: 'Press O', Index: 8 },
+];
+exports.SoundArray = [
+    { KeyCode: 81, Src: '../Sounds/kick.wav', Index: 0, Id: '.audio0' },
+    { KeyCode: 87, Src: '../Sounds/tom.wav', Index: 1, Id: '.audio1' },
+    { KeyCode: 69, Src: '../Sounds/snare.wav', Index: 2, Id: '.audio2' },
+    { KeyCode: 82, Src: '../Sounds/hihat.wav', Index: 3, Id: '.audio3' },
+    { KeyCode: 84, Src: '../Sounds/openhat.wav', Index: 4, Id: '.audio4' },
+    { KeyCode: 89, Src: '../Sounds/ride.wav', Index: 5, Id: '.audio5' },
+    { KeyCode: 85, Src: '../Sounds/boom.wav', Index: 6, Id: '.audio6' },
+    { KeyCode: 73, Src: '../Sounds/tink.wav', Index: 7, Id: '.audio7' },
+    { KeyCode: 79, Src: '../Sounds/clap.wav', Index: 8, Id: '.audio8' },
 ];
 
 
