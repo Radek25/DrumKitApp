@@ -1,6 +1,8 @@
 import {DrumCell} from './CreateDrumCell';
 import { TitleArray } from './DataArrays';
 import { SoundArray } from './DataArrays';
+import { Metronome } from './CreateMetronome';
+import { RecordField } from './CreateRecording';
 export class DrumPanel{
     allPageContainer: HTMLDivElement;
     logo: HTMLImageElement;
@@ -33,6 +35,9 @@ export class DrumPanel{
         this.recordField = document.createElement('div');
         this.recordField.classList.add('record-field');
         this.drumBoard.appendChild(this.recordField);
+
+        new RecordField;
+        new Metronome;
 
         this.createCells();
         this.playSound();

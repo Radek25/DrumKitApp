@@ -21,7 +21,33 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".all-page-container {\n  width: 100%;\n  height: 100vh;\n  overflow: hidden;\n  background-color: #3f3f3f;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n\n.logo {\n  width: 200px;\n  height: 70px;\n  position: absolute;\n  top: 20px;\n}\n\n.drum-board {\n  width: 70%;\n  height: 70%;\n  margin-top: 100px;\n  padding: 10px;\n  border: 2px solid #ffffff;\n  border-radius: 10px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n\n.play-field, .record-field {\n  height: 90%;\n  padding: 5px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n\n.play-field {\n  width: 50%;\n  padding: 0px 5px;\n  margin-right: 100px;\n  flex-wrap: wrap;\n}\n\n.record-field {\n  width: 30%;\n  background-color: #8cc534;\n  border: 0px solid #8cc534;\n  border-radius: 10px;\n}", "",{"version":3,"sources":["webpack://./Styles/DrumPanelStyles.scss","webpack://./Styles/Colors.scss","webpack://./Styles/Mixins.scss"],"names":[],"mappings":"AAEA;EACI,WAAA;EACA,aAAA;EACA,gBAAA;EACA,yBCNkB;ECClB,aAAA;EACA,uBAAA;EACA,mBAAA;AFKJ;;AACA;EACI,YAAA;EACA,YAAA;EACA,kBAAA;EACA,SAAA;AAEJ;;AAAA;EACI,UAAA;EACA,WAAA;EACA,iBAAA;EACA,aAAA;EEbA,yBAAA;EACA,mBFa6C;EEnB7C,aAAA;EACA,uBAAA;EACA,mBAAA;AFwBJ;;AAJA;EACI,WAAA;EACA,YAAA;EExBA,aAAA;EACA,uBAAA;EACA,mBAAA;AFgCJ;;AAPA;EACI,UAAA;EACA,gBAAA;EACA,mBAAA;EACA,eAAA;AAUJ;;AARA;EACI,UAAA;EACA,yBCnCS;ECKT,yBAAA;EACA,mBF8B0C;AAY9C","sourcesContent":["@import './Colors.scss';\r\n@import './Mixins.scss';\r\n.all-page-container{\r\n    width: 100%;\r\n    height: 100vh;\r\n    overflow: hidden;\r\n    background-color: $mainBackGroundColor;\r\n    @include StandarFlexOptions;\r\n}\r\n.logo{\r\n    width: 200px;\r\n    height: 70px;\r\n    position: absolute;\r\n    top: 20px;\r\n}\r\n.drum-board{\r\n    width: 70%;\r\n    height: 70%;\r\n    margin-top: 100px;\r\n    padding: 10px;\r\n    @include StandardBorder(2px, $optionalWhite, 10px);\r\n    @include StandarFlexOptions;\r\n}\r\n.play-field, .record-field{\r\n    height: 90%;\r\n    padding: 5px;\r\n    @include StandarFlexOptions;\r\n}\r\n.play-field{\r\n    width: 50%;\r\n    padding: 0px 5px;\r\n    margin-right: 100px;\r\n    flex-wrap: wrap;\r\n}\r\n.record-field{\r\n    width: 30%;\r\n    background-color: $lightGreen;\r\n    @include StandardBorder(0px, $lightGreen, 10px);\r\n}","$mainBackGroundColor: #3f3f3f;\r\n$lightGreen: #8cc534;\r\n$contrastBlack: #202020;\r\n$optionalWhite: #ffffff;","@mixin StandarFlexOptions {\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n}\r\n@mixin StandardBorder($widthOfBorder, $colorOfBorder, $radiusSize) {\r\n    border: $widthOfBorder solid $colorOfBorder;\r\n    border-radius: $radiusSize;\r\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, ".all-page-container {\n  width: 100%;\n  height: 100vh;\n  overflow: hidden;\n  background-color: #3f3f3f;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n\n.logo {\n  width: 200px;\n  height: 70px;\n  position: absolute;\n  top: 20px;\n}\n\n.drum-board {\n  width: 70%;\n  height: 70%;\n  margin-top: 100px;\n  padding: 10px;\n  border: 2px solid #ffffff;\n  border-radius: 10px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n\n.play-field, .record-field {\n  height: 90%;\n  padding: 5px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n\n.play-field {\n  width: 50%;\n  padding: 0px 5px;\n  margin-right: 100px;\n  flex-wrap: wrap;\n}\n\n.record-field {\n  width: 30%;\n  background-color: #8cc534;\n  flex-wrap: wrap;\n  border: 0px solid #8cc534;\n  border-radius: 10px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}", "",{"version":3,"sources":["webpack://./Styles/DrumPanelStyles.scss","webpack://./Styles/Colors.scss","webpack://./Styles/Mixins.scss"],"names":[],"mappings":"AAEA;EACI,WAAA;EACA,aAAA;EACA,gBAAA;EACA,yBCNkB;ECClB,aAAA;EACA,uBAAA;EACA,mBAAA;AFKJ;;AACA;EACI,YAAA;EACA,YAAA;EACA,kBAAA;EACA,SAAA;AAEJ;;AAAA;EACI,UAAA;EACA,WAAA;EACA,iBAAA;EACA,aAAA;EEbA,yBAAA;EACA,mBFa6C;EEnB7C,aAAA;EACA,uBAAA;EACA,mBAAA;AFwBJ;;AAJA;EACI,WAAA;EACA,YAAA;EExBA,aAAA;EACA,uBAAA;EACA,mBAAA;AFgCJ;;AAPA;EACI,UAAA;EACA,gBAAA;EACA,mBAAA;EACA,eAAA;AAUJ;;AARA;EACI,UAAA;EACA,yBCnCS;EDoCT,eAAA;EE/BA,yBAAA;EACA,mBF+B0C;EErC1C,aAAA;EACA,uBAAA;EACA,mBAAA;AFkDJ","sourcesContent":["@import './Colors.scss';\r\n@import './Mixins.scss';\r\n.all-page-container{\r\n    width: 100%;\r\n    height: 100vh;\r\n    overflow: hidden;\r\n    background-color: $mainBackGroundColor;\r\n    @include StandarFlexOptions;\r\n}\r\n.logo{\r\n    width: 200px;\r\n    height: 70px;\r\n    position: absolute;\r\n    top: 20px;\r\n}\r\n.drum-board{\r\n    width: 70%;\r\n    height: 70%;\r\n    margin-top: 100px;\r\n    padding: 10px;\r\n    @include StandardBorder(2px, $optionalWhite, 10px);\r\n    @include StandarFlexOptions;\r\n}\r\n.play-field, .record-field{\r\n    height: 90%;\r\n    padding: 5px;\r\n    @include StandarFlexOptions;\r\n}\r\n.play-field{\r\n    width: 50%;\r\n    padding: 0px 5px;\r\n    margin-right: 100px;\r\n    flex-wrap: wrap;\r\n}\r\n.record-field{\r\n    width: 30%;\r\n    background-color: $lightGreen;\r\n    flex-wrap: wrap;\r\n    @include StandardBorder(0px, $lightGreen, 10px);\r\n    @include StandarFlexOptions;\r\n}","$mainBackGroundColor: #3f3f3f;\r\n$lightGreen: #8cc534;\r\n$contrastBlack: #202020;\r\n$optionalWhite: #ffffff;","@mixin StandarFlexOptions {\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n}\r\n@mixin StandardBorder($widthOfBorder, $colorOfBorder, $radiusSize) {\r\n    border: $widthOfBorder solid $colorOfBorder;\r\n    border-radius: $radiusSize;\r\n}"],"sourceRoot":""}]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./Styles/Metronome.scss":
+/*!************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./Styles/Metronome.scss ***!
+  \************************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/cssWithMappingToString.js */ "./node_modules/css-loader/dist/runtime/cssWithMappingToString.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+// Imports
+
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default()));
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, ".metronome-field {\n  width: 95%;\n  height: 40%;\n  padding: 5px;\n  box-sizing: border-box;\n  background-color: #202020;\n  border-radius: 10px;\n  position: relative;\n  flex-wrap: wrap;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.metronome-field .set-BPM-button {\n  width: 80%;\n  height: 40%;\n  padding: 5px;\n  background-color: #ffffff;\n  border-radius: 10px;\n  font-family: \"Rubik\", sans-serif;\n  font-size: 1.5vw;\n  font-weight: 900;\n  color: #202020;\n  outline: none;\n  border: none;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.metronome-field .display-value-BPM {\n  width: 50%;\n  height: 30%;\n  margin-top: 35px;\n  padding: 0;\n  color: #ffffff;\n  font-size: 7vh;\n  border-top: 1px solid white;\n  border-bottom: 1px solid white;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.metronome-field .delete-metronome-button {\n  width: 25px;\n  height: 25px;\n  color: #ffffff;\n  position: absolute;\n  top: 10px;\n  right: 10px;\n  background-color: #202020;\n  border: 2px solid #ffffff;\n  border-radius: 50px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.metronome-field .option-field-container {\n  width: 90%;\n  height: 30%;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.metronome-field .option-field-container .reset-metronome-button, .metronome-field .option-field-container .start-metronome-button, .metronome-field .option-field-container .stop-metronome-button {\n  margin: 0 10px;\n  background-color: #202020;\n  border: none;\n  color: #ffffff;\n  font-size: 2.5vw;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.metronome-field .option-field-container .start-metronome-button {\n  font-size: 3.5vw;\n}", "",{"version":3,"sources":["webpack://./Styles/Metronome.scss","webpack://./Styles/Colors.scss","webpack://./Styles/Mixins.scss"],"names":[],"mappings":"AAEA;EACI,UAAA;EACA,WAAA;EACA,YAAA;EACA,sBAAA;EACA,yBCLY;EDMZ,mBAAA;EACA,kBAAA;EACA,eAAA;EETA,aAAA;EACA,uBAAA;EACA,mBAAA;AFSJ;AAAG;EACI,UAAA;EACA,WAAA;EACA,YAAA;EACA,yBCbS;EDcT,mBAAA;EACA,gCAAA;EACA,gBAAA;EACA,gBAAA;EACA,cCnBS;EDoBT,aAAA;EACA,YAAA;EEtBH,aAAA;EACA,uBAAA;EACA,mBAAA;AFyBJ;AAFG;EACK,UAAA;EACA,WAAA;EACA,gBAAA;EACA,UAAA;EACA,cC5BQ;ED6BR,cAAA;EACA,2BAAA;EACA,8BAAA;EEjCJ,aAAA;EACA,uBAAA;EACA,mBAAA;AFsCJ;AAJG;EACI,WAAA;EACA,YAAA;EACA,cCrCS;EDsCT,kBAAA;EACA,SAAA;EACA,WAAA;EACA,yBC1CS;ECIZ,yBAAA;EACA,mBFsCgD;EE5ChD,aAAA;EACA,uBAAA;EACA,mBAAA;AFoDJ;AAPG;EACI,UAAA;EACA,WAAA;EEjDH,aAAA;EACA,uBAAA;EACA,mBAAA;AF2DJ;AAVO;EACI,cAAA;EACA,yBCpDK;EDqDL,YAAA;EACA,cCrDK;EDsDL,gBAAA;EExDP,aAAA;EACA,uBAAA;EACA,mBAAA;AFqEJ;AAZO;EACI,gBAAA;AAcX","sourcesContent":["@import './Colors.scss';\r\n@import './Mixins.scss';\r\n.metronome-field{\r\n    width: 95%;\r\n    height: 40%;\r\n    padding: 5px;\r\n    box-sizing: border-box;\r\n    background-color: $contrastBlack;\r\n    border-radius: 10px;\r\n    position: relative;\r\n    flex-wrap: wrap;\r\n    @include StandarFlexOptions;\r\n   .set-BPM-button{\r\n       width: 80%;\r\n       height: 40%;\r\n       padding: 5px;\r\n       background-color: $optionalWhite;\r\n       border-radius: 10px;\r\n       font-family: 'Rubik', sans-serif;\r\n       font-size: 1.5vw;\r\n       font-weight: 900;\r\n       color:  $contrastBlack;\r\n       outline: none;\r\n       border: none;\r\n       @include StandarFlexOptions;\r\n   }\r\n   .display-value-BPM{\r\n        width: 50%;\r\n        height: 30%;\r\n        margin-top: 35px;\r\n        padding: 0;\r\n        color: $optionalWhite;\r\n        font-size: 7vh;\r\n        border-top: 1px solid white;\r\n        border-bottom: 1px solid white;\r\n        @include StandarFlexOptions;\r\n   }\r\n   .delete-metronome-button{\r\n       width: 25px;\r\n       height: 25px;\r\n       color: $optionalWhite;\r\n       position: absolute;\r\n       top: 10px;\r\n       right: 10px;\r\n       background-color: $contrastBlack;\r\n       @include StandardBorder(2px, $optionalWhite, 50px);\r\n       @include StandarFlexOptions;\r\n   }\r\n   .option-field-container{\r\n       width: 90%;\r\n       height: 30%;\r\n       @include StandarFlexOptions;\r\n       .reset-metronome-button, .start-metronome-button, .stop-metronome-button{\r\n           margin: 0 10px;\r\n           background-color: $contrastBlack;\r\n           border: none;\r\n           color: $optionalWhite;\r\n           font-size: 2.5vw;\r\n           @include StandarFlexOptions;\r\n       }\r\n       .start-metronome-button{\r\n           font-size: 3.5vw;\r\n       }\r\n   }\r\n}","$mainBackGroundColor: #3f3f3f;\r\n$lightGreen: #8cc534;\r\n$contrastBlack: #202020;\r\n$optionalWhite: #ffffff;","@mixin StandarFlexOptions {\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n}\r\n@mixin StandardBorder($widthOfBorder, $colorOfBorder, $radiusSize) {\r\n    border: $widthOfBorder solid $colorOfBorder;\r\n    border-radius: $radiusSize;\r\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -222,6 +248,35 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_DrumPanelStyles_scss__WEBPACK_IMPORTED_MODULE_1__.default.locals || {});
+
+/***/ }),
+
+/***/ "./Styles/Metronome.scss":
+/*!*******************************!*\
+  !*** ./Styles/Metronome.scss ***!
+  \*******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_Metronome_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../node_modules/css-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!./Metronome.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./Styles/Metronome.scss");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_Metronome_scss__WEBPACK_IMPORTED_MODULE_1__.default, options);
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_Metronome_scss__WEBPACK_IMPORTED_MODULE_1__.default.locals || {});
 
 /***/ }),
 
@@ -595,6 +650,8 @@ exports.DrumPanel = void 0;
 var CreateDrumCell_1 = __webpack_require__(/*! ./CreateDrumCell */ "./Main/CreateDrumCell.ts");
 var DataArrays_1 = __webpack_require__(/*! ./DataArrays */ "./Main/DataArrays.ts");
 var DataArrays_2 = __webpack_require__(/*! ./DataArrays */ "./Main/DataArrays.ts");
+var CreateMetronome_1 = __webpack_require__(/*! ./CreateMetronome */ "./Main/CreateMetronome.ts");
+var CreateRecording_1 = __webpack_require__(/*! ./CreateRecording */ "./Main/CreateRecording.ts");
 var DrumPanel = (function () {
     function DrumPanel() {
         this.allPageContainer = document.createElement('div');
@@ -613,6 +670,8 @@ var DrumPanel = (function () {
         this.recordField = document.createElement('div');
         this.recordField.classList.add('record-field');
         this.drumBoard.appendChild(this.recordField);
+        new CreateRecording_1.RecordField;
+        new CreateMetronome_1.Metronome;
         this.createCells();
         this.playSound();
         this.pauseSound();
@@ -664,6 +723,98 @@ var DrumPanel = (function () {
     return DrumPanel;
 }());
 exports.DrumPanel = DrumPanel;
+
+
+/***/ }),
+
+/***/ "./Main/CreateMetronome.ts":
+/*!*********************************!*\
+  !*** ./Main/CreateMetronome.ts ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.Metronome = void 0;
+__webpack_require__(/*! ./../Styles/Metronome.scss */ "./Styles/Metronome.scss");
+var Metronome = (function () {
+    function Metronome() {
+        this.recordField = document.querySelector('.record-field');
+        this.metronomeField = document.createElement('div');
+        this.metronomeField.classList.add('metronome-field');
+        this.recordField.appendChild(this.metronomeField);
+        this.setMetronomeButton = document.createElement('button');
+        this.setMetronomeButton.classList.add('set-BPM-button');
+        this.setMetronomeButton.innerText = 'Click to use metronome!';
+        this.metronomeField.appendChild(this.setMetronomeButton);
+        this.useMetronome();
+    }
+    Metronome.prototype.useMetronome = function () {
+        var _this = this;
+        this.setMetronomeButton.addEventListener('click', function () {
+            _this.setMetronomeButton.style.display = 'none';
+            _this.deleteMetronomeButton = document.createElement('button');
+            _this.deleteMetronomeButton.classList.add('delete-metronome-button');
+            _this.deleteMetronomeButton.innerHTML = '<i class="fas fa-minus"></i>';
+            _this.metronomeField.appendChild(_this.deleteMetronomeButton);
+            _this.displayValueBPM = document.createElement('div');
+            _this.displayValueBPM.classList.add('display-value-BPM');
+            _this.displayValueBPM.innerText = '60';
+            _this.metronomeField.appendChild(_this.displayValueBPM);
+            _this.optionFieldContainer = document.createElement('div');
+            _this.optionFieldContainer.classList.add('option-field-container');
+            _this.metronomeField.appendChild(_this.optionFieldContainer);
+            _this.resetMetronomeButton = document.createElement('button');
+            _this.resetMetronomeButton.classList.add('reset-metronome-button');
+            _this.resetMetronomeButton.innerHTML = '<i class="far fa-stop-circle"></i>';
+            _this.optionFieldContainer.appendChild(_this.resetMetronomeButton);
+            _this.startMetronomeButton = document.createElement('button');
+            _this.startMetronomeButton.classList.add('start-metronome-button');
+            _this.startMetronomeButton.innerHTML = '<i class="far fa-play-circle"></i>';
+            _this.optionFieldContainer.appendChild(_this.startMetronomeButton);
+            _this.stopMetronomeButton = document.createElement('button');
+            _this.stopMetronomeButton.classList.add('stop-metronome-button');
+            _this.stopMetronomeButton.innerHTML = '<i class="far fa-pause-circle"></i>';
+            _this.optionFieldContainer.appendChild(_this.stopMetronomeButton);
+            _this.optionFieldContainer.style.display = 'flex';
+            _this.displayValueBPM.style.display = 'flex';
+            _this.deleteMetronome();
+        });
+    };
+    Metronome.prototype.deleteMetronome = function () {
+        var _this = this;
+        this.deleteMetronomeButton.addEventListener('click', function () {
+            _this.deleteMetronomeButton.style.display = 'none';
+            _this.displayValueBPM.style.display = 'none';
+            _this.optionFieldContainer.style.display = 'none';
+            _this.setMetronomeButton.style.display = 'flex';
+        });
+    };
+    return Metronome;
+}());
+exports.Metronome = Metronome;
+
+
+/***/ }),
+
+/***/ "./Main/CreateRecording.ts":
+/*!*********************************!*\
+  !*** ./Main/CreateRecording.ts ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, exports) => {
+
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.RecordField = void 0;
+var RecordField = (function () {
+    function RecordField() {
+        this.recordField = document.querySelector('.record-field');
+        this.recordField.innerText = 'BBB';
+        console.log('Działa Record!');
+    }
+    return RecordField;
+}());
+exports.RecordField = RecordField;
 
 
 /***/ }),

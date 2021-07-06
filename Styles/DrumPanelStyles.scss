@@ -35,5 +35,7 @@
 .record-field{
     width: 30%;
     background-color: $lightGreen;
+    flex-wrap: wrap;
     @include StandardBorder(0px, $lightGreen, 10px);
+    @include StandarFlexOptions;
 }
