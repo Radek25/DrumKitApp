@@ -10,7 +10,10 @@ export class Metronome{
     startMetronomeButton: HTMLButtonElement;
     stopMetronomeButton: HTMLButtonElement;
     resetMetronomeButton: HTMLButtonElement;
-    BPMValue: number | null;
+    inputBPMValue: HTMLInputElement;
+    isInputOpen: boolean = false;
+    lastBPMValue: number;
+    BPMValue: number = 60;
 
     constructor(){
         this.recordField = document.querySelector('.record-field');
@@ -45,7 +48,7 @@ export class Metronome{
 
             this.resetMetronomeButton = document.createElement('button');
             this.resetMetronomeButton.classList.add('reset-metronome-button');
-            this.resetMetronomeButton.innerHTML = '<i class="far fa-stop-circle"></i>';
+            this.resetMetronomeButton.innerHTML = '<i class="far fa-times-circle"></i>';
             this.optionFieldContainer.appendChild(this.resetMetronomeButton);
 
             this.startMetronomeButton = document.createElement('button');
@@ -61,6 +64,7 @@ export class Metronome{
             this.optionFieldContainer.style.display = 'flex';
             this.displayValueBPM.style.display = 'flex';
             this.deleteMetronome();
+            this.addBPMValue();
         });
     }
     deleteMetronome(): void{
@@ -70,5 +74,32 @@ export class Metronome{
             this.optionFieldContainer.style.display = 'none';
             this.setMetronomeButton.style.display = 'flex';
         });
+    }
+    addBPMValue(): void{
+        this.resetMetronomeButton.addEventListener('click', () => {
+            this.lastBPMValue = this.BPMValue;
+            this.isInputOpen = !this.isInputOpen;
+            if(this.isInputOpen === true){
+                this.inputBPMValue = document.createElement('input');
+                this.displayValueBPM.innerText = '';
+                this.displayValueBPM.appendChild(this.inputBPMValue);
+                this.resetMetronomeButton.innerHTML = '<i class="far fa-check-circle"></i>';
+            }
+            else{
+                this.setBPMValue();
+                this.displayValueBPM.innerText = `${this.BPMValue}`;
+                this.resetMetronomeButton.innerHTML = '<i class="far fa-times-circle"></i>';
+            }
+        })
+    }
+    setBPMValue(): void{
+        let newBPMValue: number = parseInt(this.inputBPMValue.value);
+        if(isNaN(newBPMValue)){
+            alert('BPM value was not specified or the value format was incorrect (the correct format is an integer)!');
+            this.BPMValue = this.lastBPMValue;
+        }
+        else{
+            this.BPMValue = newBPMValue;
+        }
     }
 }
