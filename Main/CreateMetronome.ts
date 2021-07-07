@@ -1,17 +1,17 @@
 import './../Styles/Metronome.scss';
-
 export class Metronome{
     recordField: HTMLDivElement;
     metronomeField: HTMLDivElement;
+    soundOfMetronome: HTMLAudioElement;
     setMetronomeButton: HTMLButtonElement;
     deleteMetronomeButton: HTMLButtonElement;
     displayValueBPM: HTMLDivElement;
     optionFieldContainer: HTMLDivElement;
     startMetronomeButton: HTMLButtonElement;
-    stopMetronomeButton: HTMLButtonElement;
-    resetMetronomeButton: HTMLButtonElement;
+    editMetronomeButton: HTMLButtonElement;
     inputBPMValue: HTMLInputElement;
     isInputOpen: boolean = false;
+    isMetronomeStart: boolean = false;
     lastBPMValue: number;
     BPMValue: number = 60;
 
@@ -20,6 +20,11 @@ export class Metronome{
         this.metronomeField = document.createElement('div');
         this.metronomeField.classList.add('metronome-field');
         this.recordField.appendChild(this.metronomeField);
+
+        this.soundOfMetronome = document.createElement('audio');
+        this.soundOfMetronome.id = 'sound-of-metronome';
+        this.soundOfMetronome.setAttribute('src', './../Sounds/tink.wav');
+        this.metronomeField.appendChild(this.soundOfMetronome);
 
         this.setMetronomeButton = document.createElement('button');
         this.setMetronomeButton.classList.add('set-BPM-button');
@@ -46,29 +51,27 @@ export class Metronome{
             this.optionFieldContainer.classList.add('option-field-container');
             this.metronomeField.appendChild(this.optionFieldContainer);
 
-            this.resetMetronomeButton = document.createElement('button');
-            this.resetMetronomeButton.classList.add('reset-metronome-button');
-            this.resetMetronomeButton.innerHTML = '<i class="far fa-times-circle"></i>';
-            this.optionFieldContainer.appendChild(this.resetMetronomeButton);
+            this.editMetronomeButton = document.createElement('button');
+            this.editMetronomeButton.classList.add('reset-metronome-button');
+            this.editMetronomeButton.innerHTML = '<i class="fas fa-pen"></i>';
+            this.optionFieldContainer.appendChild(this.editMetronomeButton);
 
             this.startMetronomeButton = document.createElement('button');
             this.startMetronomeButton.classList.add('start-metronome-button');
-            this.startMetronomeButton.innerHTML = '<i class="far fa-play-circle"></i>';
+            this.startMetronomeButton.innerHTML = '<i class="fas fa-play"></i>';
             this.optionFieldContainer.appendChild(this.startMetronomeButton);
-
-            this.stopMetronomeButton = document.createElement('button');
-            this.stopMetronomeButton.classList.add('stop-metronome-button');
-            this.stopMetronomeButton.innerHTML = '<i class="far fa-pause-circle"></i>';
-            this.optionFieldContainer.appendChild(this.stopMetronomeButton);
 
             this.optionFieldContainer.style.display = 'flex';
             this.displayValueBPM.style.display = 'flex';
             this.deleteMetronome();
             this.addBPMValue();
+            this.controlMetronome();
         });
     }
     deleteMetronome(): void{
         this.deleteMetronomeButton.addEventListener('click', () => {
+            this.isMetronomeStart = false;
+            this.BPMValue = 60;
             this.deleteMetronomeButton.style.display = 'none';
             this.displayValueBPM.style.display = 'none';
             this.optionFieldContainer.style.display = 'none';
@@ -76,30 +79,60 @@ export class Metronome{
         });
     }
     addBPMValue(): void{
-        this.resetMetronomeButton.addEventListener('click', () => {
+        this.editMetronomeButton.addEventListener('click', () => {
             this.lastBPMValue = this.BPMValue;
             this.isInputOpen = !this.isInputOpen;
             if(this.isInputOpen === true){
+                this.isMetronomeStart = false;
                 this.inputBPMValue = document.createElement('input');
                 this.displayValueBPM.innerText = '';
                 this.displayValueBPM.appendChild(this.inputBPMValue);
-                this.resetMetronomeButton.innerHTML = '<i class="far fa-check-circle"></i>';
+                this.startMetronomeButton.style.display = 'none';
+                this.editMetronomeButton.innerHTML = '<i class="fas fa-check"></i>';
             }
             else{
                 this.setBPMValue();
                 this.displayValueBPM.innerText = `${this.BPMValue}`;
-                this.resetMetronomeButton.innerHTML = '<i class="far fa-times-circle"></i>';
+                this.startMetronomeButton.style.display = 'flex';
+                this.startMetronomeButton.innerHTML = '<i class="fas fa-play"></i>';
+                this.editMetronomeButton.innerHTML = '<i class="fas fa-pen"></i>';
             }
         })
     }
     setBPMValue(): void{
         let newBPMValue: number = parseInt(this.inputBPMValue.value);
-        if(isNaN(newBPMValue)){
-            alert('BPM value was not specified or the value format was incorrect (the correct format is an integer)!');
+        if(isNaN(newBPMValue) || newBPMValue > 200 || newBPMValue < 1){
+            alert('No BPM value was specified or the value format was incorrect (correct format is an integer from 1 to 200)!');
             this.BPMValue = this.lastBPMValue;
         }
         else{
             this.BPMValue = newBPMValue;
         }
+    }
+    controlMetronome(): void{
+        this.startMetronomeButton.addEventListener('click', () => {
+            this.isMetronomeStart = !this.isMetronomeStart;
+            playOrPouse(this.isMetronomeStart, this.startMetronomeButton, this.deleteMetronomeButton, this.editMetronomeButton, this.BPMValue);
+        });
+        function playOrPouse(isMetronomeStart: boolean, startMetronomeButton: HTMLButtonElement, deleteMetronomeButton: HTMLButtonElement, editMetronomeButton: HTMLButtonElement, BPMValue: number){
+            if(isMetronomeStart === true){
+                startMetronomeButton.innerHTML = '<i class="fas fa-pause"></i>';
+                let metronomeInterval = setInterval(playMetronome, (60 * 1000) / BPMValue);
+
+                startMetronomeButton.addEventListener('click', () => stopMetronome(metronomeInterval)); 
+                deleteMetronomeButton.addEventListener('click', () => stopMetronome(metronomeInterval));
+                editMetronomeButton.addEventListener('click', () => stopMetronome(metronomeInterval));
+            }
+            else{
+                startMetronomeButton.innerHTML = '<i class="fas fa-play"></i>';
+            }
+        }
+       function playMetronome(): void{
+           let tic: HTMLAudioElement = document.querySelector('#sound-of-metronome');
+           tic.play();
+       }
+       function stopMetronome(metronomeInterval: NodeJS.Timeout): void{
+           clearInterval(metronomeInterval);
+       }
     }
 }
