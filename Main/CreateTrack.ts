@@ -6,6 +6,7 @@ export class Track{
     controlField: HTMLDivElement;
     startRecord: HTMLButtonElement;
     playRecord: HTMLButtonElement;
+    deleteRecord: HTMLButtonElement;
     recordDiode: HTMLDivElement;
     drumBoard: HTMLDivElement;
     recordStartCounter: HTMLDivElement;
@@ -24,15 +25,19 @@ export class Track{
         this.trackField.appendChild(this.controlField);
 
         this.startRecord = document.createElement('button');
-        this.startRecord.classList.add('start-record');
+        this.startRecord.classList.add('controls-icon');
         this.startRecord.innerHTML = '<i class="fas fa-record-vinyl"></i>';
         this.controlField.appendChild(this.startRecord);
 
         this.playRecord = document.createElement('button');
-        this.playRecord.classList.add('play-record');
+        this.playRecord.classList.add('controls-icon');
         this.playRecord.innerHTML = '<i class="far fa-play-circle"></i>';
         this.controlField.appendChild(this.playRecord);
 
+        this.deleteRecord = document.createElement('button');
+        this.deleteRecord.classList.add('controls-icon');
+        this.deleteRecord.innerHTML = '<i class="far fa-times-circle"></i>';
+        this.controlField.appendChild(this.deleteRecord);
         
         this.afterRecordClick();
     }
@@ -66,9 +71,8 @@ export class Track{
             }
             else{
                 clearInterval(counterInterval);
-                this.recordStartCounter.innerText = 'Recording starts!';
             }
         },1000);
-        setTimeout(() => this.recordStartCounter.remove(), 3400);
+        setTimeout(() => this.recordStartCounter.remove(), 3000);
     }
 }

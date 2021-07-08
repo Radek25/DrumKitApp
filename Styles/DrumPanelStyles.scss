@@ -36,6 +36,7 @@
     width: 30%;
     background-color: $lightGreen;
     flex-wrap: wrap;
+    position: relative;
     @include StandardBorder(0px, $lightGreen, 10px);
     @include StandarFlexOptions;
 }
