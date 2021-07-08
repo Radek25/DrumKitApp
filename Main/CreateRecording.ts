@@ -4,10 +4,10 @@ export class RecordField{
     recordField: HTMLDivElement;
     allTracksField: HTMLDivElement;
     optionButton: HTMLButtonElement;
-    trackOne: HTMLDivElement;
-    trackTwo: HTMLDivElement;
-    trackThree: HTMLDivElement;
-    trackFour: HTMLDivElement;
+    trackOne: Track;
+    trackTwo: Track;
+    trackThree: Track;
+    trackFour: Track;
 
 
     constructor(){
@@ -22,10 +22,14 @@ export class RecordField{
         // this.optionButton.innerHTML = '<i class="fas fa-ellipsis-h"></i>';
         // this.recordField.appendChild(this.optionButton);
 
-        new Track;
-        new Track;
-        new Track;
-        new Track;
-    
+        this.trackOne = new Track('Track 1');
+        this.trackTwo = new Track('Track 2');
+        this.trackThree = new Track('Track 3');
+        this.trackFour = new Track('Track 4');
+        
+    }
+    a(): void{
+        setInterval(() => console.log('IsTrackFull: ', this.trackOne.isTrackFull), 1000)
+        setInterval(() => console.log('IsRecordStart: ', this.trackOne.isRecordStart), 1000)
     }
 }

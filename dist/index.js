@@ -73,7 +73,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".all-tracks-field {\n  width: 90%;\n  position: relative;\n}", "",{"version":3,"sources":["webpack://./Styles/RecordingFieldStyles.scss"],"names":[],"mappings":"AAGA;EACI,UAAA;EACA,kBAAA;AAFJ","sourcesContent":["@import './Colors.scss';\r\n@import './Mixins.scss';\r\n\r\n.all-tracks-field{\r\n    width: 90%;\r\n    position: relative;\r\n    // background-color: red;\r\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, ".all-tracks-field {\n  width: 90%;\n  position: relative;\n}", "",{"version":3,"sources":["webpack://./Styles/RecordingFieldStyles.scss"],"names":[],"mappings":"AAGA;EACI,UAAA;EACA,kBAAA;AAFJ","sourcesContent":["@import './Colors.scss';\r\n@import './Mixins.scss';\r\n\r\n.all-tracks-field{\r\n    width: 90%;\r\n    position: relative;\r\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -125,7 +125,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".soundtracks {\n  width: 100%;\n  height: 45px;\n  background-color: #202020;\n  margin-bottom: 10px;\n  border-radius: 5px;\n}", "",{"version":3,"sources":["webpack://./Styles/TrackFieldStyles.scss","webpack://./Styles/Colors.scss"],"names":[],"mappings":"AAGA;EACI,WAAA;EACA,YAAA;EACA,yBCJY;EDKZ,mBAAA;EACA,kBAAA;AAFJ","sourcesContent":["@import './Colors.scss';\r\n@import './Mixins.scss';\r\n\r\n.soundtracks{\r\n    width: 100%;\r\n    height: 45px;\r\n    background-color: $contrastBlack;\r\n    margin-bottom: 10px;\r\n    border-radius: 5px;\r\n}","$mainBackGroundColor: #3f3f3f;\r\n$lightGreen: #8cc534;\r\n$contrastBlack: #202020;\r\n$optionalWhite: #ffffff;"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, ".soundtracks {\n  width: 100%;\n  height: 45px;\n  padding: 2px 10px;\n  box-sizing: border-box;\n  background-color: #202020;\n  margin-bottom: 10px;\n  border-radius: 5px;\n  color: #ffffff;\n  font-family: \"Rubik\", sans-serif;\n  font-size: 2vw;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  justify-content: space-between;\n}\n.soundtracks .control-field {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.soundtracks .start-record, .soundtracks .play-record {\n  font-size: 2vw;\n  margin: 0 5px;\n  padding: 2px;\n  color: #ffffff;\n  background-color: #202020;\n  border: none;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.soundtracks .start-record {\n  position: relative;\n}\n.soundtracks .start-record .record-diode {\n  width: 45%;\n  height: 45%;\n  position: absolute;\n  border-radius: 50px;\n  background-color: red;\n}\n\n.counter-page {\n  width: 70%;\n  height: 70%;\n  background-color: #202020;\n  opacity: 0.8;\n  position: absolute;\n  color: white;\n  font-size: 4vw;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n\n.title-of-record-counter {\n  color: white;\n}", "",{"version":3,"sources":["webpack://./Styles/TrackFieldStyles.scss","webpack://./Styles/Colors.scss","webpack://./Styles/Mixins.scss"],"names":[],"mappings":"AAGA;EACI,WAAA;EACA,YAAA;EACA,iBAAA;EACA,sBAAA;EACA,yBCNY;EDOZ,mBAAA;EACA,kBAAA;EACA,cCRY;EDSZ,gCAAA;EACA,cAAA;EEZA,aAAA;EACA,uBAAA;EACA,mBAAA;EFYA,8BAAA;AAAJ;AACI;EEfA,aAAA;EACA,uBAAA;EACA,mBAAA;AFiBJ;AADI;EACI,cAAA;EACA,aAAA;EACA,YAAA;EACA,cCpBQ;EDqBR,yBCtBQ;EDuBR,YAAA;EExBJ,aAAA;EACA,uBAAA;EACA,mBAAA;AF4BJ;AAHI;EACI,kBAAA;AAKR;AAJQ;EACI,UAAA;EACA,WAAA;EACA,kBAAA;EACA,mBAAA;EACA,qBAAA;AAMZ;;AAFA;EACI,UAAA;EACA,WAAA;EACA,yBCxCY;EDyCZ,YAAA;EACA,kBAAA;EACA,YAAA;EACA,cAAA;EE7CA,aAAA;EACA,uBAAA;EACA,mBAAA;AFmDJ;;AALA;EACI,YAAA;AAQJ","sourcesContent":["@import './Colors.scss';\r\n@import './Mixins.scss';\r\n\r\n.soundtracks{\r\n    width: 100%;\r\n    height: 45px;\r\n    padding: 2px 10px;\r\n    box-sizing: border-box;\r\n    background-color: $contrastBlack;\r\n    margin-bottom: 10px;\r\n    border-radius: 5px;\r\n    color: $optionalWhite;\r\n    font-family: 'Rubik', sans-serif;\r\n    font-size: 2vw;\r\n    @include StandarFlexOptions;\r\n    justify-content: space-between;\r\n    .control-field{\r\n        @include StandarFlexOptions;\r\n    }\r\n    .start-record, .play-record{\r\n        font-size: 2vw;\r\n        margin: 0 5px;\r\n        padding: 2px;\r\n        color: $optionalWhite;\r\n        background-color: $contrastBlack;\r\n        border: none;\r\n        @include StandarFlexOptions;\r\n    }\r\n    .start-record{\r\n        position: relative;\r\n        .record-diode{\r\n            width: 45%;\r\n            height: 45%;\r\n            position: absolute;\r\n            border-radius: 50px;\r\n            background-color: red;\r\n        }\r\n    }\r\n}\r\n.counter-page{\r\n    width: 70%;\r\n    height: 70%;\r\n    background-color: $contrastBlack;\r\n    opacity: 0.8;\r\n    position: absolute;\r\n    color: white;\r\n    font-size: 4vw;\r\n    @include StandarFlexOptions;\r\n}\r\n.title-of-record-counter{\r\n    color: white;\r\n}","$mainBackGroundColor: #3f3f3f;\r\n$lightGreen: #8cc534;\r\n$contrastBlack: #202020;\r\n$optionalWhite: #ffffff;","@mixin StandarFlexOptions {\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n}\r\n@mixin StandardBorder($widthOfBorder, $colorOfBorder, $radiusSize) {\r\n    border: $widthOfBorder solid $colorOfBorder;\r\n    border-radius: $radiusSize;\r\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -989,11 +989,16 @@ var RecordField = (function () {
         this.allTracksField = document.createElement('div');
         this.allTracksField.classList.add('all-tracks-field');
         this.recordField.appendChild(this.allTracksField);
-        new CreateTrack_1.Track;
-        new CreateTrack_1.Track;
-        new CreateTrack_1.Track;
-        new CreateTrack_1.Track;
+        this.trackOne = new CreateTrack_1.Track('Track 1');
+        this.trackTwo = new CreateTrack_1.Track('Track 2');
+        this.trackThree = new CreateTrack_1.Track('Track 3');
+        this.trackFour = new CreateTrack_1.Track('Track 4');
     }
+    RecordField.prototype.a = function () {
+        var _this = this;
+        setInterval(function () { return console.log('IsTrackFull: ', _this.trackOne.isTrackFull); }, 1000);
+        setInterval(function () { return console.log('IsRecordStart: ', _this.trackOne.isRecordStart); }, 1000);
+    };
     return RecordField;
 }());
 exports.RecordField = RecordField;
@@ -1012,12 +1017,63 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.Track = void 0;
 __webpack_require__(/*! ./../Styles/TrackFieldStyles.scss */ "./Styles/TrackFieldStyles.scss");
 var Track = (function () {
-    function Track() {
+    function Track(titleOfTrack) {
+        this.isRecordStart = false;
+        this.isTrackFull = false;
         this.allTracksField = document.querySelector('.all-tracks-field');
         this.trackField = document.createElement('div');
         this.trackField.classList.add('soundtracks');
+        this.trackField.innerText = "" + titleOfTrack;
         this.allTracksField.appendChild(this.trackField);
+        this.controlField = document.createElement('div');
+        this.controlField.classList.add('control-field');
+        this.trackField.appendChild(this.controlField);
+        this.startRecord = document.createElement('button');
+        this.startRecord.classList.add('start-record');
+        this.startRecord.innerHTML = '<i class="fas fa-record-vinyl"></i>';
+        this.controlField.appendChild(this.startRecord);
+        this.playRecord = document.createElement('button');
+        this.playRecord.classList.add('play-record');
+        this.playRecord.innerHTML = '<i class="far fa-play-circle"></i>';
+        this.controlField.appendChild(this.playRecord);
+        this.afterRecordClick();
     }
+    Track.prototype.afterRecordClick = function () {
+        var _this = this;
+        this.startRecord.addEventListener('click', function () {
+            if (_this.isRecordStart === false) {
+                _this.recordDiode = document.createElement('div');
+                _this.recordDiode.classList.add('record-diode');
+                setTimeout(function () { return _this.startRecord.appendChild(_this.recordDiode); }, 2950);
+                _this.addCounterPage();
+                _this.isRecordStart = !_this.isRecordStart;
+            }
+            else {
+                _this.recordDiode.style.display = 'none';
+                _this.isTrackFull = true;
+            }
+        });
+    };
+    Track.prototype.addCounterPage = function () {
+        var _this = this;
+        var counter = 2;
+        this.drumBoard = document.querySelector('.drum-board');
+        this.recordStartCounter = document.createElement('div');
+        this.recordStartCounter.classList.add('counter-page');
+        this.drumBoard.appendChild(this.recordStartCounter);
+        this.recordStartCounter.innerText = '3';
+        var counterInterval = setInterval(function () {
+            if (counter > 0) {
+                _this.recordStartCounter.innerText = "" + counter;
+                counter--;
+            }
+            else {
+                clearInterval(counterInterval);
+                _this.recordStartCounter.innerText = 'Recording starts!';
+            }
+        }, 1000);
+        setTimeout(function () { return _this.recordStartCounter.remove(); }, 3400);
+    };
     return Track;
 }());
 exports.Track = Track;
