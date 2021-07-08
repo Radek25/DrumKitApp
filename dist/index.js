@@ -54,6 +54,32 @@ ___CSS_LOADER_EXPORT___.push([module.id, ".metronome-field {\n  width: 95%;\n  m
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./Styles/RecordingFieldStyles.scss":
+/*!***********************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./Styles/RecordingFieldStyles.scss ***!
+  \***********************************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/cssWithMappingToString.js */ "./node_modules/css-loader/dist/runtime/cssWithMappingToString.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+// Imports
+
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default()));
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, ".all-tracks-field {\n  width: 90%;\n  position: relative;\n}", "",{"version":3,"sources":["webpack://./Styles/RecordingFieldStyles.scss"],"names":[],"mappings":"AAGA;EACI,UAAA;EACA,kBAAA;AAFJ","sourcesContent":["@import './Colors.scss';\r\n@import './Mixins.scss';\r\n\r\n.all-tracks-field{\r\n    width: 90%;\r\n    position: relative;\r\n    // background-color: red;\r\n}"],"sourceRoot":""}]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./Styles/SingleCell.scss":
 /*!*************************************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./Styles/SingleCell.scss ***!
@@ -74,6 +100,32 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, ".single-cell {\n  width: calc((100% - 70px) / 3);\n  height: calc((100% - 70px) / 3);\n  box-sizing: border-box;\n  margin: 10px;\n  padding: 10px 5px;\n  background-color: #202020;\n  color: #ffffff;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-wrap: wrap;\n  border-radius: 10px;\n}\n.single-cell h5, .single-cell p {\n  width: 100%;\n  text-align: center;\n  margin: 0;\n}\n.single-cell h5 {\n  font-family: \"Grandstander\", cursive;\n  font-size: 1.8vw;\n}\n.single-cell p {\n  font-family: \"Rubik\", sans-serif;\n  font-size: 1.5vw;\n}", "",{"version":3,"sources":["webpack://./Styles/SingleCell.scss","webpack://./Styles/Colors.scss","webpack://./Styles/Mixins.scss"],"names":[],"mappings":"AAEA;EACI,8BAAA;EACA,+BAAA;EACA,sBAAA;EACA,YAAA;EACA,iBAAA;EACA,yBCNY;EDOZ,cCNY;ECFZ,aAAA;EACA,uBAAA;EACA,mBAAA;EFQA,eAAA;EACA,mBAAA;AACJ;AAAI;EACI,WAAA;EACA,kBAAA;EACA,SAAA;AAER;AAAI;EACI,oCAAA;EACA,gBAAA;AAER;AAAI;EACI,gCAAA;EACA,gBAAA;AAER","sourcesContent":["@import './Colors.scss';\r\n@import './Mixins.scss';\r\n.single-cell{\r\n    width: calc((100% - 70px) / 3);\r\n    height: calc((100% - 70px) / 3);\r\n    box-sizing: border-box;\r\n    margin: 10px;\r\n    padding: 10px 5px;\r\n    background-color: $contrastBlack;\r\n    color: $optionalWhite;\r\n    @include StandarFlexOptions;\r\n    flex-wrap: wrap;\r\n    border-radius: 10px;\r\n    h5, p{\r\n        width: 100%;\r\n        text-align: center;\r\n        margin: 0;\r\n    }\r\n    h5{\r\n        font-family: 'Grandstander', cursive;\r\n        font-size: 1.8vw;\r\n    }\r\n    p{\r\n        font-family: 'Rubik', sans-serif;\r\n        font-size: 1.5vw;\r\n    }\r\n}","$mainBackGroundColor: #3f3f3f;\r\n$lightGreen: #8cc534;\r\n$contrastBlack: #202020;\r\n$optionalWhite: #ffffff;","@mixin StandarFlexOptions {\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n}\r\n@mixin StandardBorder($widthOfBorder, $colorOfBorder, $radiusSize) {\r\n    border: $widthOfBorder solid $colorOfBorder;\r\n    border-radius: $radiusSize;\r\n}"],"sourceRoot":""}]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./Styles/TrackFieldStyles.scss":
+/*!*******************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./Styles/TrackFieldStyles.scss ***!
+  \*******************************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/cssWithMappingToString.js */ "./node_modules/css-loader/dist/runtime/cssWithMappingToString.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+// Imports
+
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default()));
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, ".soundtracks {\n  width: 100%;\n  height: 45px;\n  background-color: #202020;\n  margin-bottom: 10px;\n  border-radius: 5px;\n}", "",{"version":3,"sources":["webpack://./Styles/TrackFieldStyles.scss","webpack://./Styles/Colors.scss"],"names":[],"mappings":"AAGA;EACI,WAAA;EACA,YAAA;EACA,yBCJY;EDKZ,mBAAA;EACA,kBAAA;AAFJ","sourcesContent":["@import './Colors.scss';\r\n@import './Mixins.scss';\r\n\r\n.soundtracks{\r\n    width: 100%;\r\n    height: 45px;\r\n    background-color: $contrastBlack;\r\n    margin-bottom: 10px;\r\n    border-radius: 5px;\r\n}","$mainBackGroundColor: #3f3f3f;\r\n$lightGreen: #8cc534;\r\n$contrastBlack: #202020;\r\n$optionalWhite: #ffffff;"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -280,6 +332,35 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 /***/ }),
 
+/***/ "./Styles/RecordingFieldStyles.scss":
+/*!******************************************!*\
+  !*** ./Styles/RecordingFieldStyles.scss ***!
+  \******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_RecordingFieldStyles_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../node_modules/css-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!./RecordingFieldStyles.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./Styles/RecordingFieldStyles.scss");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_RecordingFieldStyles_scss__WEBPACK_IMPORTED_MODULE_1__.default, options);
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_RecordingFieldStyles_scss__WEBPACK_IMPORTED_MODULE_1__.default.locals || {});
+
+/***/ }),
+
 /***/ "./Styles/SingleCell.scss":
 /*!********************************!*\
   !*** ./Styles/SingleCell.scss ***!
@@ -306,6 +387,35 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_SingleCell_scss__WEBPACK_IMPORTED_MODULE_1__.default.locals || {});
+
+/***/ }),
+
+/***/ "./Styles/TrackFieldStyles.scss":
+/*!**************************************!*\
+  !*** ./Styles/TrackFieldStyles.scss ***!
+  \**************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_TrackFieldStyles_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../node_modules/css-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!./TrackFieldStyles.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./Styles/TrackFieldStyles.scss");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_TrackFieldStyles_scss__WEBPACK_IMPORTED_MODULE_1__.default, options);
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_TrackFieldStyles_scss__WEBPACK_IMPORTED_MODULE_1__.default.locals || {});
 
 /***/ }),
 
@@ -866,20 +976,51 @@ exports.Metronome = Metronome;
 /*!*********************************!*\
   !*** ./Main/CreateRecording.ts ***!
   \*********************************/
-/***/ ((__unused_webpack_module, exports) => {
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.RecordField = void 0;
+__webpack_require__(/*! ./../Styles/RecordingFieldStyles.scss */ "./Styles/RecordingFieldStyles.scss");
+var CreateTrack_1 = __webpack_require__(/*! ./CreateTrack */ "./Main/CreateTrack.ts");
 var RecordField = (function () {
     function RecordField() {
         this.recordField = document.querySelector('.record-field');
-        this.recordField.innerText = 'BBB';
-        console.log('Działa Record!');
+        this.allTracksField = document.createElement('div');
+        this.allTracksField.classList.add('all-tracks-field');
+        this.recordField.appendChild(this.allTracksField);
+        new CreateTrack_1.Track;
+        new CreateTrack_1.Track;
+        new CreateTrack_1.Track;
+        new CreateTrack_1.Track;
     }
     return RecordField;
 }());
 exports.RecordField = RecordField;
+
+
+/***/ }),
+
+/***/ "./Main/CreateTrack.ts":
+/*!*****************************!*\
+  !*** ./Main/CreateTrack.ts ***!
+  \*****************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.Track = void 0;
+__webpack_require__(/*! ./../Styles/TrackFieldStyles.scss */ "./Styles/TrackFieldStyles.scss");
+var Track = (function () {
+    function Track() {
+        this.allTracksField = document.querySelector('.all-tracks-field');
+        this.trackField = document.createElement('div');
+        this.trackField.classList.add('soundtracks');
+        this.allTracksField.appendChild(this.trackField);
+    }
+    return Track;
+}());
+exports.Track = Track;
 
 
 /***/ }),
@@ -999,7 +1140,6 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 __webpack_require__(/*! ../Styles/main.scss */ "./Styles/main.scss");
 __webpack_require__(/*! ./../Styles/DrumPanelStyles.scss */ "./Styles/DrumPanelStyles.scss");
 var CreateDrumPanel_1 = __webpack_require__(/*! ./CreateDrumPanel */ "./Main/CreateDrumPanel.ts");
-console.log('Work!');
 var p = new CreateDrumPanel_1.DrumPanel;
 
 })();
