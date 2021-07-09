@@ -759,7 +759,6 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.DrumPanel = void 0;
 var CreateDrumCell_1 = __webpack_require__(/*! ./CreateDrumCell */ "./Main/CreateDrumCell.ts");
 var DataArrays_1 = __webpack_require__(/*! ./DataArrays */ "./Main/DataArrays.ts");
-var DataArrays_2 = __webpack_require__(/*! ./DataArrays */ "./Main/DataArrays.ts");
 var CreateMetronome_1 = __webpack_require__(/*! ./CreateMetronome */ "./Main/CreateMetronome.ts");
 var CreateRecording_1 = __webpack_require__(/*! ./CreateRecording */ "./Main/CreateRecording.ts");
 var DrumPanel = (function () {
@@ -780,11 +779,9 @@ var DrumPanel = (function () {
         this.recordField = document.createElement('div');
         this.recordField.classList.add('record-field');
         this.drumBoard.appendChild(this.recordField);
-        new CreateRecording_1.RecordField;
+        this.record = new CreateRecording_1.RecordField;
         new CreateMetronome_1.Metronome;
         this.createCells();
-        this.playSound();
-        this.pauseSound();
     }
     DrumPanel.prototype.createCells = function () {
         for (var index = 0; index < 9; index++) {
@@ -805,29 +802,37 @@ var DrumPanel = (function () {
     };
     DrumPanel.prototype.addSoundToCells = function (index) {
         this.audioCell = document.createElement('audio');
-        this.audioCell.setAttribute('src', DataArrays_2.SoundArray[index].Src);
+        this.audioCell.setAttribute('src', DataArrays_1.SoundArray[index].Src);
         this.audioCell.classList.add('audio' + index);
         this.cell.singleCell.appendChild(this.audioCell);
     };
     DrumPanel.prototype.playSound = function () {
+        var _this = this;
         window.addEventListener('keydown', function (e) {
-            var cellIndex = DataArrays_2.SoundArray.find(function (SoundArray) { return SoundArray.KeyCode === e.keyCode; }).Index;
-            var keyDownFinder = DataArrays_2.SoundArray.find(function (SoundArray) { return SoundArray.KeyCode === e.keyCode; }).Id;
+            var cellIndex = DataArrays_1.SoundArray.find(function (SoundArray) { return SoundArray.KeyCode === e.keyCode; }).Index;
+            var keyDownFinder = DataArrays_1.SoundArray.find(function (SoundArray) { return SoundArray.KeyCode === e.keyCode; }).Id;
             var playingCell = document.querySelector("" + keyDownFinder);
             var backgroundColorOfCell = document.querySelector('#c' + cellIndex);
             backgroundColorOfCell.style.backgroundColor = '#8cc534';
             playingCell.play();
+            _this.record.keyCode = e.keyCode;
+            var timeStart = new Date().getTime();
+            _this.record.timeStart = timeStart;
         });
     };
     DrumPanel.prototype.pauseSound = function () {
+        var _this = this;
         window.addEventListener('keyup', function (e) {
-            var cellIndex = DataArrays_2.SoundArray.find(function (SoundArray) { return SoundArray.KeyCode === e.keyCode; }).Index;
-            var keyDownFinder = DataArrays_2.SoundArray.find(function (SoundArray) { return SoundArray.KeyCode === e.keyCode; }).Id;
+            var cellIndex = DataArrays_1.SoundArray.find(function (SoundArray) { return SoundArray.KeyCode === e.keyCode; }).Index;
+            var keyDownFinder = DataArrays_1.SoundArray.find(function (SoundArray) { return SoundArray.KeyCode === e.keyCode; }).Id;
             var playingCell = document.querySelector("" + keyDownFinder);
             var backgroundColorOfCell = document.querySelector('#c' + cellIndex);
             backgroundColorOfCell.style.backgroundColor = '#202020';
             playingCell.pause();
             playingCell.currentTime = 0;
+            var timeStop = new Date().getTime();
+            _this.record.timeStop = timeStop;
+            _this.record.getTimeAndKeyCode();
         });
     };
     return DrumPanel;
@@ -983,6 +988,7 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.RecordField = void 0;
 __webpack_require__(/*! ./../Styles/RecordingFieldStyles.scss */ "./Styles/RecordingFieldStyles.scss");
 var CreateTrack_1 = __webpack_require__(/*! ./CreateTrack */ "./Main/CreateTrack.ts");
+var DataArrays_1 = __webpack_require__(/*! ./DataArrays */ "./Main/DataArrays.ts");
 var RecordField = (function () {
     function RecordField() {
         this.isOptionalMenuOpen = false;
@@ -995,10 +1001,32 @@ var RecordField = (function () {
         this.trackThree = new CreateTrack_1.Track('Track 3');
         this.trackFour = new CreateTrack_1.Track('Track 4');
     }
-    RecordField.prototype.a = function () {
-        var _this = this;
-        setInterval(function () { return console.log('IsTrackFull: ', _this.trackOne.isTrackFull); }, 1000);
-        setInterval(function () { return console.log('IsRecordStart: ', _this.trackOne.isRecordStart); }, 1000);
+    RecordField.prototype.getTimeAndKeyCode = function () {
+        var data = {
+            currentTime: this.timeStop - this.timeStart,
+            key: this.keyCode
+        };
+        switch (true) {
+            case this.trackOne.isRecordStart:
+                DataArrays_1.FirstRecordArray.push(data);
+                break;
+            case this.trackTwo.isRecordStart:
+                DataArrays_1.SecondRecordArray.push(data);
+                break;
+            case this.trackThree.isRecordStart:
+                DataArrays_1.ThirdRecordArray.push(data);
+                break;
+            case this.trackFour.isRecordStart:
+                DataArrays_1.FourthRecordArray.push(data);
+                break;
+            default:
+                null;
+                break;
+        }
+        console.log('Pierwsza tablica: ', DataArrays_1.FirstRecordArray);
+        console.log('Druga tablica: ', DataArrays_1.SecondRecordArray);
+        console.log('Trzecia tablica: ', DataArrays_1.ThirdRecordArray);
+        console.log('Czwarta tablica: ', DataArrays_1.FourthRecordArray);
     };
     return RecordField;
 }());
@@ -1055,6 +1083,7 @@ var Track = (function () {
             }
             else {
                 _this.recordDiode.style.display = 'none';
+                _this.isRecordStart = false;
                 _this.isTrackFull = true;
             }
         });
@@ -1093,7 +1122,7 @@ exports.Track = Track;
 
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.SoundArray = exports.TitleArray = void 0;
+exports.FourthRecordArray = exports.ThirdRecordArray = exports.SecondRecordArray = exports.FirstRecordArray = exports.SoundArray = exports.TitleArray = void 0;
 exports.TitleArray = [
     { Name: 'KICK', Info: 'Press Q', Index: 0 },
     { Name: 'TOM', Info: 'Press W', Index: 1 },
@@ -1116,6 +1145,10 @@ exports.SoundArray = [
     { KeyCode: 73, Src: '../Sounds/tink.wav', Index: 7, Id: '.audio7' },
     { KeyCode: 79, Src: '../Sounds/clap.wav', Index: 8, Id: '.audio8' },
 ];
+exports.FirstRecordArray = new Array();
+exports.SecondRecordArray = new Array();
+exports.ThirdRecordArray = new Array();
+exports.FourthRecordArray = new Array();
 
 
 /***/ })
@@ -1201,6 +1234,8 @@ __webpack_require__(/*! ../Styles/main.scss */ "./Styles/main.scss");
 __webpack_require__(/*! ./../Styles/DrumPanelStyles.scss */ "./Styles/DrumPanelStyles.scss");
 var CreateDrumPanel_1 = __webpack_require__(/*! ./CreateDrumPanel */ "./Main/CreateDrumPanel.ts");
 var p = new CreateDrumPanel_1.DrumPanel;
+p.playSound();
+p.pauseSound();
 
 })();
 

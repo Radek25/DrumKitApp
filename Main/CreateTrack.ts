@@ -52,6 +52,7 @@ export class Track{
             }
             else{
                 this.recordDiode.style.display = 'none';
+                this.isRecordStart = false;
                 this.isTrackFull = true;
             }
         })

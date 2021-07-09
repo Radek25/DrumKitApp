@@ -20,3 +20,7 @@ export const SoundArray = [
     {KeyCode: 73, Src: '../Sounds/tink.wav', Index: 7, Id: '.audio7'},
     {KeyCode: 79, Src: '../Sounds/clap.wav', Index: 8, Id: '.audio8'},
 ]
+export let FirstRecordArray = new Array();
+export let SecondRecordArray = new Array();
+export let ThirdRecordArray = new Array();
+export let FourthRecordArray = new Array();

@@ -1,6 +1,5 @@
 import {DrumCell} from './CreateDrumCell';
-import { TitleArray } from './DataArrays';
-import { SoundArray } from './DataArrays';
+import { SoundArray, TitleArray } from './DataArrays';
 import { Metronome } from './CreateMetronome';
 import { RecordField } from './CreateRecording';
 export class DrumPanel{
@@ -13,6 +12,7 @@ export class DrumPanel{
     titleCell: HTMLHeadingElement;
     infoCell: HTMLParagraphElement;
     audioCell: HTMLAudioElement;
+    record: RecordField;
 
     constructor(){
         this.allPageContainer = document.createElement('div');
@@ -36,12 +36,9 @@ export class DrumPanel{
         this.recordField.classList.add('record-field');
         this.drumBoard.appendChild(this.recordField);
 
-        new RecordField;
+        this.record = new RecordField;
         new Metronome;
-
         this.createCells();
-        this.playSound();
-        this.pauseSound();
     }
 
     createCells(): void{
@@ -63,24 +60,28 @@ export class DrumPanel{
         this.infoCell.innerHTML = TitleArray[index].Info;
         this.cell.singleCell.appendChild(this.infoCell);
     }
-    addSoundToCells(index: number){
+    addSoundToCells(index: number): void{
         this.audioCell = document.createElement('audio');
         this.audioCell.setAttribute('src', SoundArray[index].Src);
         this.audioCell.classList.add('audio'+index);
         this.cell.singleCell.appendChild(this.audioCell);
     }
-    playSound(){
-        window.addEventListener('keydown', function(e){
+    playSound(): void{
+        window.addEventListener('keydown', (e) => {
             let cellIndex: number = SoundArray.find(SoundArray => SoundArray.KeyCode === e.keyCode).Index;
             let keyDownFinder: string = SoundArray.find(SoundArray => SoundArray.KeyCode === e.keyCode).Id;
             let playingCell: HTMLAudioElement = document.querySelector(`${keyDownFinder}`);
             let backgroundColorOfCell: HTMLElement = document.querySelector('#c'+cellIndex);
             backgroundColorOfCell.style.backgroundColor = '#8cc534';
             playingCell.play();
+            this.record.keyCode  = e.keyCode;
+            let timeStart: number = new Date().getTime();
+            this.record.timeStart = timeStart;
         })
+        
     }
-    pauseSound(){
-        window.addEventListener('keyup', function(e){
+    pauseSound(): void{
+        window.addEventListener('keyup', (e) => {
             let cellIndex: number = SoundArray.find(SoundArray => SoundArray.KeyCode === e.keyCode).Index;
             let keyDownFinder: string = SoundArray.find(SoundArray => SoundArray.KeyCode === e.keyCode).Id;
             let playingCell: HTMLAudioElement = document.querySelector(`${keyDownFinder}`);
@@ -88,6 +89,10 @@ export class DrumPanel{
             backgroundColorOfCell.style.backgroundColor = '#202020';
             playingCell.pause();
             playingCell.currentTime = 0;
+            let timeStop: number = new Date().getTime();
+            this.record.timeStop = timeStop;
+            this.record.getTimeAndKeyCode();
         })
     }
+    
 }
