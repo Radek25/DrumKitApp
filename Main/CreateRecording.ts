@@ -1,3 +1,4 @@
+import { IgnorePlugin } from 'webpack';
 import './../Styles/RecordingFieldStyles.scss'
 import { Track } from './CreateTrack';
 import { FirstRecordArray, SecondRecordArray, ThirdRecordArray, FourthRecordArray, SoundArray } from './DataArrays';
@@ -25,6 +26,7 @@ export class RecordField{
         this.trackThree = new Track('Track 3');
         this.trackFour = new Track('Track 4');
         this.addBreakTimeAndPlayRecord();
+        this.deleteRecord();
     }
   
 
@@ -55,13 +57,13 @@ export class RecordField{
             break;
         }
     }
-      addBreakTimeAndPlayRecord(): void{
+    addBreakTimeAndPlayRecord(): void{
         this.trackOne.playRecord.addEventListener('click', () => playRecordTrack(FirstRecordArray, this.trackOne.isTrackFull));
         this.trackTwo.playRecord.addEventListener('click', () => playRecordTrack(SecondRecordArray, this.trackTwo.isTrackFull));
         this.trackThree.playRecord.addEventListener('click', () => playRecordTrack(ThirdRecordArray, this.trackThree.isTrackFull));
         this.trackFour.playRecord.addEventListener('click', () => playRecordTrack(FourthRecordArray, this.trackFour.isTrackFull));
 
-        async function playRecordTrack(arrayOfTrack: any[], isTrackFull: boolean): Promise<void>{
+        function playRecordTrack(arrayOfTrack: any[], isTrackFull: boolean): void{
             if(isTrackFull === true){
                 getBreakTime(arrayOfTrack);
                 console.log(arrayOfTrack);
@@ -85,5 +87,43 @@ export class RecordField{
                 arrayOfTrack[index+1].breakTime = breakTime;
             }
         }
+    }
+    deleteRecord(): void{
+        this.trackOne.deleteRecord.addEventListener('click', () => {
+            if(confirm('Do you want remove record on Track 1?')){
+                FirstRecordArray.length = 0; 
+                this.trackOne.isTrackFull = false;
+            }
+            else{
+                null;
+            }
+        });
+        this.trackTwo.deleteRecord.addEventListener('click', () => {
+            if(confirm('Do you want remove record on Track 2?')){
+                SecondRecordArray.length = 0; 
+            this.trackTwo.isTrackFull = false;
+            }
+            else{
+                null;
+            }
+        });
+        this.trackThree.deleteRecord.addEventListener('click', () => {
+            if(confirm('Do you want remove record on Track 3?')){
+                ThirdRecordArray.length = 0; 
+                this.trackThree.isTrackFull = false;
+            }
+            else{
+                null;
+            }
+        });
+        this.trackFour.deleteRecord.addEventListener('click', () => {
+            if(confirm('Do you want remove record on Track 4?')){
+                FourthRecordArray.length = 0; 
+                this.trackFour.isTrackFull = false;
+            }
+            else{
+                null;
+            }
+        });
     }
 }

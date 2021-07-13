@@ -73,7 +73,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".all-tracks-field {\n  width: 90%;\n  position: relative;\n  margin-top: 20px;\n}", "",{"version":3,"sources":["webpack://./Styles/RecordingFieldStyles.scss"],"names":[],"mappings":"AAGA;EACI,UAAA;EACA,kBAAA;EACA,gBAAA;AAFJ","sourcesContent":["@import './Colors.scss';\r\n@import './Mixins.scss';\r\n\r\n.all-tracks-field{\r\n    width: 90%;\r\n    position: relative;\r\n    margin-top: 20px;\r\n}\r\n// .option-button{\r\n//     top: 10px;\r\n//     right: 10px;\r\n//     position: absolute;\r\n//     background-color: $lightGreen;\r\n//     border: none;\r\n//     color: $optionalWhite;\r\n// }\r\n// .optional-menu{\r\n//     width: 50%;\r\n//     height: 50%;\r\n//     top: 25px;\r\n//     right: 15px;\r\n//     position: absolute;\r\n//     background-color: green;\r\n//     z-index: 20;\r\n// }"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, ".all-tracks-field {\n  width: 90%;\n  position: relative;\n  margin-top: 20px;\n}", "",{"version":3,"sources":["webpack://./Styles/RecordingFieldStyles.scss"],"names":[],"mappings":"AAGA;EACI,UAAA;EACA,kBAAA;EACA,gBAAA;AAFJ","sourcesContent":["@import './Colors.scss';\r\n@import './Mixins.scss';\r\n\r\n.all-tracks-field{\r\n    width: 90%;\r\n    position: relative;\r\n    margin-top: 20px;\r\n}\r\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -979,45 +979,9 @@ exports.Metronome = Metronome;
 /*!*********************************!*\
   !*** ./Main/CreateRecording.ts ***!
   \*********************************/
-/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
-var __generator = (this && this.__generator) || function (thisArg, body) {
-    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
-    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
-    function verb(n) { return function (v) { return step([n, v]); }; }
-    function step(op) {
-        if (f) throw new TypeError("Generator is already executing.");
-        while (_) try {
-            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
-            if (y = 0, t) op = [op[0] & 2, t.value];
-            switch (op[0]) {
-                case 0: case 1: t = op; break;
-                case 4: _.label++; return { value: op[1], done: false };
-                case 5: _.label++; y = op[1]; op = [0]; continue;
-                case 7: op = _.ops.pop(); _.trys.pop(); continue;
-                default:
-                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
-                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
-                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
-                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
-                    if (t[2]) _.ops.pop();
-                    _.trys.pop(); continue;
-            }
-            op = body.call(thisArg, _);
-        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
-        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
-    }
-};
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.RecordField = void 0;
 __webpack_require__(/*! ./../Styles/RecordingFieldStyles.scss */ "./Styles/RecordingFieldStyles.scss");
@@ -1034,6 +998,7 @@ var RecordField = (function () {
         this.trackThree = new CreateTrack_1.Track('Track 3');
         this.trackFour = new CreateTrack_1.Track('Track 4');
         this.addBreakTimeAndPlayRecord();
+        this.deleteRecord();
     }
     RecordField.prototype.getTimeAndKeyCode = function () {
         var data = {
@@ -1068,26 +1033,20 @@ var RecordField = (function () {
         this.trackThree.playRecord.addEventListener('click', function () { return playRecordTrack(DataArrays_1.ThirdRecordArray, _this.trackThree.isTrackFull); });
         this.trackFour.playRecord.addEventListener('click', function () { return playRecordTrack(DataArrays_1.FourthRecordArray, _this.trackFour.isTrackFull); });
         function playRecordTrack(arrayOfTrack, isTrackFull) {
-            return __awaiter(this, void 0, void 0, function () {
-                var offSet_1;
-                return __generator(this, function (_a) {
-                    if (isTrackFull === true) {
-                        getBreakTime(arrayOfTrack);
-                        console.log(arrayOfTrack);
-                        offSet_1 = 0;
-                        arrayOfTrack.forEach(function (e) {
-                            var soundId = DataArrays_1.SoundArray.find(function (SoundArray) { return SoundArray.KeyCode === e.key; }).Id;
-                            var playCell = document.querySelector("" + soundId);
-                            setTimeout(function () {
-                                playCell.play();
-                                setTimeout(function () { return playCell.pause(); }, e.currentTime + offSet_1);
-                            }, e.breakTime + offSet_1);
-                            offSet_1 += e.currentTime + e.breakTime;
-                        });
-                    }
-                    return [2];
+            if (isTrackFull === true) {
+                getBreakTime(arrayOfTrack);
+                console.log(arrayOfTrack);
+                var offSet_1 = 0;
+                arrayOfTrack.forEach(function (e) {
+                    var soundId = DataArrays_1.SoundArray.find(function (SoundArray) { return SoundArray.KeyCode === e.key; }).Id;
+                    var playCell = document.querySelector("" + soundId);
+                    setTimeout(function () {
+                        playCell.play();
+                        setTimeout(function () { return playCell.pause(); }, e.currentTime + offSet_1);
+                    }, e.breakTime + offSet_1);
+                    offSet_1 += e.currentTime + e.breakTime;
                 });
-            });
+            }
         }
         function getBreakTime(arrayOfTrack) {
             var breakTime;
@@ -1096,6 +1055,45 @@ var RecordField = (function () {
                 arrayOfTrack[index + 1].breakTime = breakTime;
             }
         }
+    };
+    RecordField.prototype.deleteRecord = function () {
+        var _this = this;
+        this.trackOne.deleteRecord.addEventListener('click', function () {
+            if (confirm('Do you want remove record on Track 1?')) {
+                DataArrays_1.FirstRecordArray.length = 0;
+                _this.trackOne.isTrackFull = false;
+            }
+            else {
+                null;
+            }
+        });
+        this.trackTwo.deleteRecord.addEventListener('click', function () {
+            if (confirm('Do you want remove record on Track 2?')) {
+                DataArrays_1.SecondRecordArray.length = 0;
+                _this.trackTwo.isTrackFull = false;
+            }
+            else {
+                null;
+            }
+        });
+        this.trackThree.deleteRecord.addEventListener('click', function () {
+            if (confirm('Do you want remove record on Track 3?')) {
+                DataArrays_1.ThirdRecordArray.length = 0;
+                _this.trackThree.isTrackFull = false;
+            }
+            else {
+                null;
+            }
+        });
+        this.trackFour.deleteRecord.addEventListener('click', function () {
+            if (confirm('Do you want remove record on Track 4?')) {
+                DataArrays_1.FourthRecordArray.length = 0;
+                _this.trackFour.isTrackFull = false;
+            }
+            else {
+                null;
+            }
+        });
     };
     return RecordField;
 }());
@@ -1242,7 +1240,7 @@ exports.FourthRecordArray = new Array();
 /******/ 		};
 /******/ 	
 /******/ 		// Execute the module function
-/******/ 		__webpack_modules__[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
 /******/ 	
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
