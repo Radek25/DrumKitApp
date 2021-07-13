@@ -43,7 +43,7 @@ export class Track{
     }
     afterRecordClick(): void{
         this.startRecord.addEventListener('click', () => {
-            if(this.isRecordStart === false){
+            if(this.isRecordStart === false && this.isTrackFull !== true){
                 this.recordDiode = document.createElement('div');
                 this.recordDiode.classList.add('record-diode'); 
                 setTimeout(() => this.startRecord.appendChild(this.recordDiode), 2950);

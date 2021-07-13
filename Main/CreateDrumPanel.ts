@@ -75,8 +75,7 @@ export class DrumPanel{
             backgroundColorOfCell.style.backgroundColor = '#8cc534';
             playingCell.play();
             this.record.keyCode  = e.keyCode;
-            let timeStart: number = new Date().getTime();
-            this.record.timeStart = timeStart;
+            this.record.timeStart = new Date().getTime();
         })
         
     }
@@ -89,10 +88,8 @@ export class DrumPanel{
             backgroundColorOfCell.style.backgroundColor = '#202020';
             playingCell.pause();
             playingCell.currentTime = 0;
-            let timeStop: number = new Date().getTime();
-            this.record.timeStop = timeStop;
+            this.record.timeStop = new Date().getTime();
             this.record.getTimeAndKeyCode();
         })
     }
-    
 }

@@ -1,10 +1,9 @@
 import './../Styles/RecordingFieldStyles.scss'
 import { Track } from './CreateTrack';
-import { FirstRecordArray, SecondRecordArray, ThirdRecordArray, FourthRecordArray } from './DataArrays';
+import { FirstRecordArray, SecondRecordArray, ThirdRecordArray, FourthRecordArray, SoundArray } from './DataArrays';
 export class RecordField{
     recordField: HTMLDivElement;
     allTracksField: HTMLDivElement;
-    isOptionalMenuOpen: boolean = false;
     trackOne: Track;
     trackTwo: Track;
     trackThree: Track;
@@ -12,6 +11,8 @@ export class RecordField{
 
     timeStart: number;
     timeStop: number;
+    timeBreakStart: number;
+    timeBreakStop: number;
     keyCode: number;
     constructor(){
         this.recordField = document.querySelector('.record-field');
@@ -23,6 +24,7 @@ export class RecordField{
         this.trackTwo = new Track('Track 2');
         this.trackThree = new Track('Track 3');
         this.trackFour = new Track('Track 4');
+        this.addBreakTimeAndPlayRecord();
     }
   
 
@@ -30,9 +32,11 @@ export class RecordField{
 
         let data = {
             currentTime: this.timeStop - this.timeStart,
-            key: this.keyCode
+            key: this.keyCode,
+            timeStart: this.timeStart,
+            timeStop: this.timeStop,
+            breakTime: 0
         }
-
         switch (true) {
             case this.trackOne.isRecordStart:
                 FirstRecordArray.push(data);
@@ -50,9 +54,36 @@ export class RecordField{
                 null;
             break;
         }
-        console.log('Pierwsza tablica: ', FirstRecordArray);
-        console.log('Druga tablica: ', SecondRecordArray);
-        console.log('Trzecia tablica: ', ThirdRecordArray);
-        console.log('Czwarta tablica: ', FourthRecordArray);
+    }
+      addBreakTimeAndPlayRecord(): void{
+        this.trackOne.playRecord.addEventListener('click', () => playRecordTrack(FirstRecordArray, this.trackOne.isTrackFull));
+        this.trackTwo.playRecord.addEventListener('click', () => playRecordTrack(SecondRecordArray, this.trackTwo.isTrackFull));
+        this.trackThree.playRecord.addEventListener('click', () => playRecordTrack(ThirdRecordArray, this.trackThree.isTrackFull));
+        this.trackFour.playRecord.addEventListener('click', () => playRecordTrack(FourthRecordArray, this.trackFour.isTrackFull));
+
+        async function playRecordTrack(arrayOfTrack: any[], isTrackFull: boolean): Promise<void>{
+            if(isTrackFull === true){
+                getBreakTime(arrayOfTrack);
+                console.log(arrayOfTrack);
+
+                let offSet: number = 0;
+                arrayOfTrack.forEach(e => {
+                    let soundId: string = SoundArray.find(SoundArray => SoundArray.KeyCode === e.key).Id;
+                    let playCell: HTMLAudioElement = document.querySelector(`${soundId}`);
+                    setTimeout(() => {
+                        playCell.play();
+                        setTimeout(() => playCell.pause(), e.currentTime + offSet);
+                    }, e.breakTime + offSet);
+                    offSet += e.currentTime + e.breakTime;
+                });
+            }
+        }
+        function getBreakTime(arrayOfTrack: any[]): void{
+            let breakTime: number;
+            for (let index = 0; index < arrayOfTrack.length-1; index++) {
+                breakTime = arrayOfTrack[index+1].timeStart - arrayOfTrack[index].timeStop;
+                arrayOfTrack[index+1].breakTime = breakTime;
+            }
+        }
     }
 }
