@@ -68,28 +68,32 @@ export class DrumPanel{
     }
     playSound(): void{
         window.addEventListener('keydown', (e) => {
-            let cellIndex: number = SoundArray.find(SoundArray => SoundArray.KeyCode === e.keyCode).Index;
-            let keyDownFinder: string = SoundArray.find(SoundArray => SoundArray.KeyCode === e.keyCode).Id;
-            let playingCell: HTMLAudioElement = document.querySelector(`${keyDownFinder}`);
-            let backgroundColorOfCell: HTMLElement = document.querySelector('#c'+cellIndex);
-            backgroundColorOfCell.style.backgroundColor = '#8cc534';
-            playingCell.play();
-            this.record.keyCode  = e.keyCode;
-            this.record.timeStart = new Date().getTime();
+            if((SoundArray.find(SoundArray => SoundArray.KeyCode === e.keyCode)) !== undefined){
+                let cellIndex: number = SoundArray.find(SoundArray => SoundArray.KeyCode === e.keyCode).Index;
+                let keyDownFinder: string = SoundArray.find(SoundArray => SoundArray.KeyCode === e.keyCode).Id;
+                let playingCell: HTMLAudioElement = document.querySelector(`${keyDownFinder}`);
+                let backgroundColorOfCell: HTMLElement = document.querySelector('#c'+cellIndex);
+                backgroundColorOfCell.style.backgroundColor = '#8cc534';
+                playingCell.play();
+                this.record.keyCode  = e.keyCode;
+                this.record.timeStart = new Date().getTime();
+            }
         })
         
     }
     pauseSound(): void{
         window.addEventListener('keyup', (e) => {
-            let cellIndex: number = SoundArray.find(SoundArray => SoundArray.KeyCode === e.keyCode).Index;
-            let keyDownFinder: string = SoundArray.find(SoundArray => SoundArray.KeyCode === e.keyCode).Id;
-            let playingCell: HTMLAudioElement = document.querySelector(`${keyDownFinder}`);
-            let backgroundColorOfCell: HTMLElement = document.querySelector('#c'+cellIndex);
-            backgroundColorOfCell.style.backgroundColor = '#202020';
-            playingCell.pause();
-            playingCell.currentTime = 0;
-            this.record.timeStop = new Date().getTime();
-            this.record.getTimeAndKeyCode();
+            if((SoundArray.find(SoundArray => SoundArray.KeyCode === e.keyCode)) !== undefined){
+                let cellIndex: number = SoundArray.find(SoundArray => SoundArray.KeyCode === e.keyCode).Index;
+                let keyDownFinder: string = SoundArray.find(SoundArray => SoundArray.KeyCode === e.keyCode).Id;
+                let playingCell: HTMLAudioElement = document.querySelector(`${keyDownFinder}`);
+                let backgroundColorOfCell: HTMLElement = document.querySelector('#c'+cellIndex);
+                backgroundColorOfCell.style.backgroundColor = '#202020';
+                playingCell.pause();
+                playingCell.currentTime = 0;
+                this.record.timeStop = new Date().getTime();
+                this.record.getTimeAndKeyCode();
+            }
         })
     }
 }

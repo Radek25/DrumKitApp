@@ -809,28 +809,32 @@ var DrumPanel = (function () {
     DrumPanel.prototype.playSound = function () {
         var _this = this;
         window.addEventListener('keydown', function (e) {
-            var cellIndex = DataArrays_1.SoundArray.find(function (SoundArray) { return SoundArray.KeyCode === e.keyCode; }).Index;
-            var keyDownFinder = DataArrays_1.SoundArray.find(function (SoundArray) { return SoundArray.KeyCode === e.keyCode; }).Id;
-            var playingCell = document.querySelector("" + keyDownFinder);
-            var backgroundColorOfCell = document.querySelector('#c' + cellIndex);
-            backgroundColorOfCell.style.backgroundColor = '#8cc534';
-            playingCell.play();
-            _this.record.keyCode = e.keyCode;
-            _this.record.timeStart = new Date().getTime();
+            if ((DataArrays_1.SoundArray.find(function (SoundArray) { return SoundArray.KeyCode === e.keyCode; })) !== undefined) {
+                var cellIndex = DataArrays_1.SoundArray.find(function (SoundArray) { return SoundArray.KeyCode === e.keyCode; }).Index;
+                var keyDownFinder = DataArrays_1.SoundArray.find(function (SoundArray) { return SoundArray.KeyCode === e.keyCode; }).Id;
+                var playingCell = document.querySelector("" + keyDownFinder);
+                var backgroundColorOfCell = document.querySelector('#c' + cellIndex);
+                backgroundColorOfCell.style.backgroundColor = '#8cc534';
+                playingCell.play();
+                _this.record.keyCode = e.keyCode;
+                _this.record.timeStart = new Date().getTime();
+            }
         });
     };
     DrumPanel.prototype.pauseSound = function () {
         var _this = this;
         window.addEventListener('keyup', function (e) {
-            var cellIndex = DataArrays_1.SoundArray.find(function (SoundArray) { return SoundArray.KeyCode === e.keyCode; }).Index;
-            var keyDownFinder = DataArrays_1.SoundArray.find(function (SoundArray) { return SoundArray.KeyCode === e.keyCode; }).Id;
-            var playingCell = document.querySelector("" + keyDownFinder);
-            var backgroundColorOfCell = document.querySelector('#c' + cellIndex);
-            backgroundColorOfCell.style.backgroundColor = '#202020';
-            playingCell.pause();
-            playingCell.currentTime = 0;
-            _this.record.timeStop = new Date().getTime();
-            _this.record.getTimeAndKeyCode();
+            if ((DataArrays_1.SoundArray.find(function (SoundArray) { return SoundArray.KeyCode === e.keyCode; })) !== undefined) {
+                var cellIndex = DataArrays_1.SoundArray.find(function (SoundArray) { return SoundArray.KeyCode === e.keyCode; }).Index;
+                var keyDownFinder = DataArrays_1.SoundArray.find(function (SoundArray) { return SoundArray.KeyCode === e.keyCode; }).Id;
+                var playingCell = document.querySelector("" + keyDownFinder);
+                var backgroundColorOfCell = document.querySelector('#c' + cellIndex);
+                backgroundColorOfCell.style.backgroundColor = '#202020';
+                playingCell.pause();
+                playingCell.currentTime = 0;
+                _this.record.timeStop = new Date().getTime();
+                _this.record.getTimeAndKeyCode();
+            }
         });
     };
     return DrumPanel;
