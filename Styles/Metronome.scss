@@ -11,9 +11,11 @@
     position: relative;
     flex-wrap: wrap;
     @include StandarFlexOptions;
+    @media (max-width: 800px){
+        height: 40%;
+    }
    .set-BPM-button{
        width: 80%;
-       height: 40%;
        padding: 5px;
        background-color: $optionalWhite;
        border-radius: 10px;
@@ -35,6 +37,9 @@
         border-top: 1px solid $optionalWhite;
         border-bottom: 1px solid $optionalWhite;
         @include StandarFlexOptions;
+        @media (max-width: 800px){
+            margin-top: 30px;
+        }
         input{
            width: 80%;
            padding: 0;
@@ -48,15 +53,13 @@
         }
    }
    .delete-metronome-button{
-       width: 1.5vw;
-       height: 1.5vw;
-       font-size: 0.8vw;
+       font-size: 1.5vw;
        color: $optionalWhite;
        position: absolute;
        top: 10px;
        right: 10px;
        background-color: $contrastBlack;
-       @include StandardBorder(2px, $optionalWhite, 50px);
+       border: none;
        @include StandarFlexOptions;
    }
    .option-field-container{
@@ -64,6 +67,9 @@
        height: 30%;
        margin: 20px 0 10px;
        @include StandarFlexOptions;
+       @media (max-width: 800px){
+        margin: 5px 0;
+    }
        .reset-metronome-button, .start-metronome-button{
             width: 3.5vw;
             height: 3.5vw;

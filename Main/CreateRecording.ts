@@ -66,7 +66,6 @@ export class RecordField{
         function playRecordTrack(arrayOfTrack: any[], isTrackFull: boolean): void{
             if(isTrackFull === true){
                 getBreakTime(arrayOfTrack);
-                console.log(arrayOfTrack);
 
                 let offSet: number = 0;
                 arrayOfTrack.forEach(e => {

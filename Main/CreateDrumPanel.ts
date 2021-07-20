@@ -4,6 +4,8 @@ import { Metronome } from './CreateMetronome';
 import { RecordField } from './CreateRecording';
 export class DrumPanel{
     allPageContainer: HTMLDivElement;
+    widthControlPage: HTMLDivElement;
+    gifInControlPage: HTMLImageElement;
     logo: HTMLImageElement;
     drumBoard: HTMLDivElement;
     playField : HTMLDivElement;
@@ -18,6 +20,13 @@ export class DrumPanel{
         this.allPageContainer = document.createElement('div');
         this.allPageContainer.classList.add('all-page-container');
         document.body.appendChild(this.allPageContainer);
+
+        this.widthControlPage = document.createElement('div');
+        this.widthControlPage.classList.add('width-control-page');
+        document.body.appendChild(this.widthControlPage);
+        this.gifInControlPage = document.createElement('img');
+        this.gifInControlPage.src = './Gif/turnScreen.gif';
+        this.widthControlPage.appendChild(this.gifInControlPage);
 
         this.logo = document.createElement('img');
         this.logo.src = './Logo/logo.png';

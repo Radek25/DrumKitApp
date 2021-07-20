@@ -1,7 +1,6 @@
 import '../Styles/main.scss';
 import './../Styles/DrumPanelStyles.scss';
 import { DrumPanel } from './CreateDrumPanel';
- let p = new DrumPanel;
- p.playSound();
- p.pauseSound();
-//  console.log(p.t1);
+ let drum = new DrumPanel;
+ drum.playSound();
+ drum.pauseSound();

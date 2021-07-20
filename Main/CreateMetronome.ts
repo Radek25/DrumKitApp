@@ -39,7 +39,7 @@ export class Metronome{
 
             this.deleteMetronomeButton = document.createElement('button');
             this.deleteMetronomeButton.classList.add('delete-metronome-button');
-            this.deleteMetronomeButton.innerHTML = '<i class="fas fa-minus"></i>';
+            this.deleteMetronomeButton.innerHTML = '<i class="fas fa-minus-circle"></i>';
             this.metronomeField.appendChild(this.deleteMetronomeButton);
 
             this.displayValueBPM = document.createElement('div');

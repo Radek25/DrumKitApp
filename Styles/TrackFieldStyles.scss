@@ -24,24 +24,22 @@
         color: $optionalWhite;
         background-color: $contrastBlack;
         border: none;
+        outline: none;
         @include StandarFlexOptions;
-    }
-    
-    .record-diode{
-        width: 45%;
-        height: 45%;
-        position: absolute;
-        border-radius: 50px;
-        background-color: red;
     }
 }
 .counter-page{
     width: 70%;
     height: 70%;
     position: absolute;
+    border-radius: 10px;
     background-color: rgba($color: $contrastBlack, $alpha: 0.9);
     color: $optionalWhite;
     font-size: 7vw;
     font-family: 'Grandstander', cursive;
     @include StandarFlexOptions;
+    @media (max-width: 850px){
+        width: 90%;
+        height: 90%;
+    }
 }

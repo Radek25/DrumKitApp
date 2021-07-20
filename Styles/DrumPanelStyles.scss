@@ -6,20 +6,44 @@
     overflow: hidden;
     background-color: $mainBackGroundColor;
     @include StandarFlexOptions;
+    flex-wrap: wrap;
+}
+.width-control-page{
+    @media (min-width: 401px) {
+        display: none;
+    }
+    @media (max-width: 400px) {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: $contrastBlack;
+        @include StandarFlexOptions;
+        img{
+            width: 250px;
+            height: 250px;
+        }
+    }
 }
 .logo{
     width: 200px;
     height: 70px;
-    position: absolute;
-    top: 20px;
+    margin: 0 100px;
+    @media (max-width: 850px) {
+        display: none;
+    }
 }
 .drum-board{
     width: 70%;
     height: 70%;
-    margin-top: 100px;
     padding: 10px;
     @include StandardBorder(2px, $optionalWhite, 10px);
     @include StandarFlexOptions;
+    @media (max-width: 850px){
+        width: 90%;
+        height: 90%;
+    }
 }
 .play-field, .record-field{
     height: 90%;

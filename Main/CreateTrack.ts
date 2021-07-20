@@ -26,6 +26,7 @@ export class Track{
 
         this.startRecord = document.createElement('button');
         this.startRecord.classList.add('controls-icon');
+        this.startRecord.classList.add('start-record');
         this.startRecord.innerHTML = '<i class="fas fa-record-vinyl"></i>';
         this.controlField.appendChild(this.startRecord);
 
@@ -44,14 +45,12 @@ export class Track{
     afterRecordClick(): void{
         this.startRecord.addEventListener('click', () => {
             if(this.isRecordStart === false && this.isTrackFull !== true){
-                this.recordDiode = document.createElement('div');
-                this.recordDiode.classList.add('record-diode'); 
-                setTimeout(() => this.startRecord.appendChild(this.recordDiode), 2950);
+                setTimeout(() => this.startRecord.style.color = '#ff0000', 2950);
                 this.addCounterPage();
                 this.isRecordStart = !this.isRecordStart;
             }
             else{
-                this.recordDiode.style.display = 'none';
+                this.startRecord.style.color = '#ffffff8c';
                 this.isRecordStart = false;
                 this.isTrackFull = true;
             }
