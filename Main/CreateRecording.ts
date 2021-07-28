@@ -2,7 +2,7 @@ import { IgnorePlugin } from 'webpack';
 import './../Styles/RecordingFieldStyles.scss'
 import { Track } from './CreateTrack';
 import { FirstRecordArray, SecondRecordArray, ThirdRecordArray, FourthRecordArray, SoundArray } from './DataArrays';
-export class RecordField{
+export class Record{
     recordField: HTMLDivElement;
     allTracksField: HTMLDivElement;
     trackOne: Track;
@@ -66,15 +66,20 @@ export class RecordField{
         function playRecordTrack(arrayOfTrack: any[], isTrackFull: boolean): void{
             if(isTrackFull === true){
                 getBreakTime(arrayOfTrack);
-
+                console.log(FirstRecordArray);
                 let offSet: number = 0;
                 arrayOfTrack.forEach(e => {
                     let soundId: string = SoundArray.find(SoundArray => SoundArray.KeyCode === e.key).Id;
                     let playCell: HTMLAudioElement = document.querySelector(`${soundId}`);
                     setTimeout(() => {
                         playCell.play();
-                        setTimeout(() => playCell.pause(), e.currentTime + offSet);
+                        console.log('Play: ', soundId)
+                        
                     }, e.breakTime + offSet);
+                    setTimeout(() => {
+                        playCell.pause();
+                        playCell.currentTime = 0;
+                    }, e.currentTime + e.breakTime + offSet);
                     offSet += e.currentTime + e.breakTime;
                 });
             }
@@ -92,6 +97,7 @@ export class RecordField{
             if(confirm('Do you want remove record on Track 1?')){
                 FirstRecordArray.length = 0; 
                 this.trackOne.isTrackFull = false;
+                this.trackOne.startRecord.style.color = '#ffffff';
             }
             else{
                 null;
@@ -101,6 +107,7 @@ export class RecordField{
             if(confirm('Do you want remove record on Track 2?')){
                 SecondRecordArray.length = 0; 
             this.trackTwo.isTrackFull = false;
+            this.trackTwo.startRecord.style.color = '#ffffff';
             }
             else{
                 null;
@@ -110,6 +117,7 @@ export class RecordField{
             if(confirm('Do you want remove record on Track 3?')){
                 ThirdRecordArray.length = 0; 
                 this.trackThree.isTrackFull = false;
+                this.trackThree.startRecord.style.color = '#ffffff';
             }
             else{
                 null;
@@ -119,6 +127,7 @@ export class RecordField{
             if(confirm('Do you want remove record on Track 4?')){
                 FourthRecordArray.length = 0; 
                 this.trackFour.isTrackFull = false;
+                this.trackFour.startRecord.style.color = '#ffffff';
             }
             else{
                 null;

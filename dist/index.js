@@ -21,7 +21,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".all-page-container {\n  width: 100%;\n  height: 100vh;\n  overflow: hidden;\n  background-color: #3f3f3f;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-wrap: wrap;\n}\n\n@media (min-width: 401px) {\n  .width-control-page {\n    display: none;\n  }\n}\n@media (max-width: 400px) {\n  .width-control-page {\n    width: 100%;\n    height: 100%;\n    position: absolute;\n    top: 0;\n    left: 0;\n    background-color: #202020;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n  }\n  .width-control-page img {\n    width: 250px;\n    height: 250px;\n  }\n}\n\n.logo {\n  width: 200px;\n  height: 70px;\n  margin: 0 100px;\n}\n@media (max-width: 850px) {\n  .logo {\n    display: none;\n  }\n}\n\n.drum-board {\n  width: 70%;\n  height: 70%;\n  padding: 10px;\n  border: 2px solid #ffffff;\n  border-radius: 10px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n@media (max-width: 850px) {\n  .drum-board {\n    width: 90%;\n    height: 90%;\n  }\n}\n\n.play-field, .record-field {\n  height: 90%;\n  padding: 5px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n\n.play-field {\n  width: 50%;\n  padding: 0px 5px;\n  margin-right: 100px;\n  flex-wrap: wrap;\n}\n\n.record-field {\n  width: 30%;\n  background-color: #8cc534;\n  flex-wrap: wrap;\n  position: relative;\n  border: 0px solid #8cc534;\n  border-radius: 10px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}", "",{"version":3,"sources":["webpack://./Styles/DrumPanelStyles.scss","webpack://./Styles/Colors.scss","webpack://./Styles/Mixins.scss"],"names":[],"mappings":"AAEA;EACI,WAAA;EACA,aAAA;EACA,gBAAA;EACA,yBCNkB;ECClB,aAAA;EACA,uBAAA;EACA,mBAAA;EFKA,eAAA;AACJ;;AAEI;EADJ;IAEQ,aAAA;EAEN;AACF;AADI;EAJJ;IAKQ,WAAA;IACA,YAAA;IACA,kBAAA;IACA,MAAA;IACA,OAAA;IACA,yBClBQ;ICDZ,aAAA;IACA,uBAAA;IACA,mBAAA;EFwBF;EALM;IACI,YAAA;IACA,aAAA;EAOV;AACF;;AAJA;EACI,YAAA;EACA,YAAA;EACA,eAAA;AAOJ;AANI;EAJJ;IAKQ,aAAA;EASN;AACF;;AAPA;EACI,UAAA;EACA,WAAA;EACA,aAAA;EEjCA,yBAAA;EACA,mBFiC6C;EEvC7C,aAAA;EACA,uBAAA;EACA,mBAAA;AFmDJ;AAZI;EANJ;IAOQ,UAAA;IACA,WAAA;EAeN;AACF;;AAbA;EACI,WAAA;EACA,YAAA;EEhDA,aAAA;EACA,uBAAA;EACA,mBAAA;AFiEJ;;AAhBA;EACI,UAAA;EACA,gBAAA;EACA,mBAAA;EACA,eAAA;AAmBJ;;AAjBA;EACI,UAAA;EACA,yBC3DS;ED4DT,eAAA;EACA,kBAAA;EExDA,yBAAA;EACA,mBFwD0C;EE9D1C,aAAA;EACA,uBAAA;EACA,mBAAA;AFoFJ","sourcesContent":["@import './Colors.scss';\r\n@import './Mixins.scss';\r\n.all-page-container{\r\n    width: 100%;\r\n    height: 100vh;\r\n    overflow: hidden;\r\n    background-color: $mainBackGroundColor;\r\n    @include StandarFlexOptions;\r\n    flex-wrap: wrap;\r\n}\r\n.width-control-page{\r\n    @media (min-width: 401px) {\r\n        display: none;\r\n    }\r\n    @media (max-width: 400px) {\r\n        width: 100%;\r\n        height: 100%;\r\n        position: absolute;\r\n        top: 0;\r\n        left: 0;\r\n        background-color: $contrastBlack;\r\n        @include StandarFlexOptions;\r\n        img{\r\n            width: 250px;\r\n            height: 250px;\r\n        }\r\n    }\r\n}\r\n.logo{\r\n    width: 200px;\r\n    height: 70px;\r\n    margin: 0 100px;\r\n    @media (max-width: 850px) {\r\n        display: none;\r\n    }\r\n}\r\n.drum-board{\r\n    width: 70%;\r\n    height: 70%;\r\n    padding: 10px;\r\n    @include StandardBorder(2px, $optionalWhite, 10px);\r\n    @include StandarFlexOptions;\r\n    @media (max-width: 850px){\r\n        width: 90%;\r\n        height: 90%;\r\n    }\r\n}\r\n.play-field, .record-field{\r\n    height: 90%;\r\n    padding: 5px;\r\n    @include StandarFlexOptions;\r\n}\r\n.play-field{\r\n    width: 50%;\r\n    padding: 0px 5px;\r\n    margin-right: 100px;\r\n    flex-wrap: wrap;\r\n}\r\n.record-field{\r\n    width: 30%;\r\n    background-color: $lightGreen;\r\n    flex-wrap: wrap;\r\n    position: relative;\r\n    @include StandardBorder(0px, $lightGreen, 10px);\r\n    @include StandarFlexOptions;\r\n}","$mainBackGroundColor: #3f3f3f;\r\n$lightGreen: #8cc534;\r\n$contrastBlack: #202020;\r\n$optionalWhite: #ffffff;","@mixin StandarFlexOptions {\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n}\r\n@mixin StandardBorder($widthOfBorder, $colorOfBorder, $radiusSize) {\r\n    border: $widthOfBorder solid $colorOfBorder;\r\n    border-radius: $radiusSize;\r\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, ".all-page-container {\n  width: 100%;\n  height: 100vh;\n  overflow: hidden;\n  background-color: #3f3f3f;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-wrap: wrap;\n}\n\n@media (min-width: 510px) {\n  .width-control-page {\n    display: none;\n  }\n}\n@media (max-width: 509px) {\n  .width-control-page {\n    width: 100%;\n    height: 100%;\n    position: absolute;\n    top: 0;\n    left: 0;\n    background-color: #202020;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n  }\n  .width-control-page img {\n    width: 250px;\n    height: 250px;\n  }\n}\n@media (min-height: 1020px) {\n  .width-control-page {\n    width: 100%;\n    height: 100%;\n    position: absolute;\n    top: 0;\n    left: 0;\n    background-color: #202020;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n  }\n  .width-control-page img {\n    width: 250px;\n    height: 250px;\n  }\n}\n\n.logo {\n  width: 200px;\n  height: 70px;\n  margin: 0 100px;\n}\n@media (max-width: 850px) {\n  .logo {\n    display: none;\n  }\n}\n\n.drum-board {\n  width: 70%;\n  height: 70%;\n  padding: 10px;\n  border: 2px solid #ffffff;\n  border-radius: 10px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n@media (max-width: 850px) {\n  .drum-board {\n    width: 90%;\n    height: 90%;\n  }\n}\n\n.play-field, .record-field {\n  height: 90%;\n  padding: 5px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n\n.play-field {\n  width: 50%;\n  padding: 0px 5px;\n  margin-right: 100px;\n  flex-wrap: wrap;\n}\n\n.record-field {\n  width: 30%;\n  background-color: #8cc534;\n  flex-wrap: wrap;\n  position: relative;\n  border: 0px solid #8cc534;\n  border-radius: 10px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}", "",{"version":3,"sources":["webpack://./Styles/DrumPanelStyles.scss","webpack://./Styles/Colors.scss","webpack://./Styles/Mixins.scss"],"names":[],"mappings":"AAEA;EACI,WAAA;EACA,aAAA;EACA,gBAAA;EACA,yBCNkB;ECClB,aAAA;EACA,uBAAA;EACA,mBAAA;EFKA,eAAA;AACJ;;AAEI;EADJ;IAEQ,aAAA;EAEN;AACF;AADI;EAJJ;IAKQ,WAAA;IACA,YAAA;IACA,kBAAA;IACA,MAAA;IACA,OAAA;IACA,yBClBQ;ICDZ,aAAA;IACA,uBAAA;IACA,mBAAA;EFwBF;EALM;IACI,YAAA;IACA,aAAA;EAOV;AACF;AALI;EAjBJ;IAkBQ,WAAA;IACA,YAAA;IACA,kBAAA;IACA,MAAA;IACA,OAAA;IACA,yBC/BQ;ICDZ,aAAA;IACA,uBAAA;IACA,mBAAA;EFyCF;EATM;IACI,YAAA;IACA,aAAA;EAWV;AACF;;AARA;EACI,YAAA;EACA,YAAA;EACA,eAAA;AAWJ;AAVI;EAJJ;IAKQ,aAAA;EAaN;AACF;;AAXA;EACI,UAAA;EACA,WAAA;EACA,aAAA;EE9CA,yBAAA;EACA,mBF8C6C;EEpD7C,aAAA;EACA,uBAAA;EACA,mBAAA;AFoEJ;AAhBI;EANJ;IAOQ,UAAA;IACA,WAAA;EAmBN;AACF;;AAjBA;EACI,WAAA;EACA,YAAA;EE7DA,aAAA;EACA,uBAAA;EACA,mBAAA;AFkFJ;;AApBA;EACI,UAAA;EACA,gBAAA;EACA,mBAAA;EACA,eAAA;AAuBJ;;AArBA;EACI,UAAA;EACA,yBCxES;EDyET,eAAA;EACA,kBAAA;EErEA,yBAAA;EACA,mBFqE0C;EE3E1C,aAAA;EACA,uBAAA;EACA,mBAAA;AFqGJ","sourcesContent":["@import './Colors.scss';\r\n@import './Mixins.scss';\r\n.all-page-container{\r\n    width: 100%;\r\n    height: 100vh;\r\n    overflow: hidden;\r\n    background-color: $mainBackGroundColor;\r\n    @include StandarFlexOptions;\r\n    flex-wrap: wrap;\r\n}\r\n.width-control-page{\r\n    @media (min-width: 510px) {\r\n        display: none;\r\n    }\r\n    @media (max-width: 509px) {\r\n        width: 100%;\r\n        height: 100%;\r\n        position: absolute;\r\n        top: 0;\r\n        left: 0;\r\n        background-color: $contrastBlack;\r\n        @include StandarFlexOptions;\r\n        img{\r\n            width: 250px;\r\n            height: 250px;\r\n        }\r\n    }\r\n    @media (min-height: 1020px) {\r\n        width: 100%;\r\n        height: 100%;\r\n        position: absolute;\r\n        top: 0;\r\n        left: 0;\r\n        background-color: $contrastBlack;\r\n        @include StandarFlexOptions;\r\n        img{\r\n            width: 250px;\r\n            height: 250px;\r\n        }\r\n    }\r\n}\r\n.logo{\r\n    width: 200px;\r\n    height: 70px;\r\n    margin: 0 100px;\r\n    @media (max-width: 850px) {\r\n        display: none;\r\n    }\r\n}\r\n.drum-board{\r\n    width: 70%;\r\n    height: 70%;\r\n    padding: 10px;\r\n    @include StandardBorder(2px, $optionalWhite, 10px);\r\n    @include StandarFlexOptions;\r\n    @media (max-width: 850px){\r\n        width: 90%;\r\n        height: 90%;\r\n    }\r\n}\r\n.play-field, .record-field{\r\n    height: 90%;\r\n    padding: 5px;\r\n    @include StandarFlexOptions;\r\n}\r\n.play-field{\r\n    width: 50%;\r\n    padding: 0px 5px;\r\n    margin-right: 100px;\r\n    flex-wrap: wrap;\r\n}\r\n.record-field{\r\n    width: 30%;\r\n    background-color: $lightGreen;\r\n    flex-wrap: wrap;\r\n    position: relative;\r\n    @include StandardBorder(0px, $lightGreen, 10px);\r\n    @include StandarFlexOptions;\r\n}","$mainBackGroundColor: #3f3f3f;\r\n$lightGreen: #8cc534;\r\n$contrastBlack: #202020;\r\n$optionalWhite: #ffffff;","@mixin StandarFlexOptions {\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n}\r\n@mixin StandardBorder($widthOfBorder, $colorOfBorder, $radiusSize) {\r\n    border: $widthOfBorder solid $colorOfBorder;\r\n    border-radius: $radiusSize;\r\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -736,11 +736,89 @@ module.exports = function (list, options) {
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.DrumCell = void 0;
 __webpack_require__(/*! ./../Styles/SingleCell */ "./Styles/SingleCell.scss");
+var DataArrays_1 = __webpack_require__(/*! ./DataArrays */ "./Main/DataArrays.ts");
 var DrumCell = (function () {
     function DrumCell() {
+        this.supportsTouch = 'ontouchstart' in window || navigator.msMaxTouchPoints;
         this.singleCell = document.createElement('div');
         this.singleCell.classList.add('single-cell');
     }
+    DrumCell.prototype.addTextToCells = function (index) {
+        this.titleCell = document.createElement('h5');
+        this.titleCell.innerHTML = DataArrays_1.TitleArray[index].Name;
+        this.titleCell.id = "c" + index;
+        this.infoCell = document.createElement('p');
+        this.infoCell.id = "c" + index;
+        if (('ontouchstart' in window || navigator.msMaxTouchPoints) === true && window.screen.width < 1100) {
+            this.infoCell.innerHTML = 'Touch';
+        }
+        else {
+            this.infoCell.innerHTML = DataArrays_1.TitleArray[index].Info;
+        }
+    };
+    DrumCell.prototype.addSoundToCells = function (index) {
+        this.audioCell = document.createElement('audio');
+        this.audioCell.setAttribute('src', DataArrays_1.SoundArray[index].Src);
+        this.audioCell.classList.add('audio' + index);
+    };
+    DrumCell.prototype.playSoundKeyBoard = function () {
+        var _this = this;
+        window.addEventListener('keydown', function (e) {
+            if ((DataArrays_1.SoundArray.find(function (SoundArray) { return SoundArray.KeyCode === e.keyCode; })) !== undefined) {
+                var cellIndex = DataArrays_1.SoundArray.find(function (SoundArray) { return SoundArray.KeyCode === e.keyCode; }).Index;
+                var keyDownFinder = DataArrays_1.SoundArray.find(function (SoundArray) { return SoundArray.KeyCode === e.keyCode; }).Id;
+                var playingCell = document.querySelector("" + keyDownFinder);
+                var backgroundColorOfCell = document.querySelector('#c' + cellIndex);
+                backgroundColorOfCell.style.backgroundColor = '#8cc534';
+                playingCell.play();
+                _this.record.keyCode = e.keyCode;
+                _this.record.timeStart = new Date().getTime();
+            }
+        });
+    };
+    DrumCell.prototype.pauseSoundKeyBoard = function () {
+        var _this = this;
+        window.addEventListener('keyup', function (e) {
+            if ((DataArrays_1.SoundArray.find(function (SoundArray) { return SoundArray.KeyCode === e.keyCode; })) !== undefined) {
+                var cellIndex = DataArrays_1.SoundArray.find(function (SoundArray) { return SoundArray.KeyCode === e.keyCode; }).Index;
+                var keyDownFinder = DataArrays_1.SoundArray.find(function (SoundArray) { return SoundArray.KeyCode === e.keyCode; }).Id;
+                var playingCell = document.querySelector("" + keyDownFinder);
+                var backgroundColorOfCell = document.querySelector('#c' + cellIndex);
+                backgroundColorOfCell.style.backgroundColor = '#202020';
+                playingCell.pause();
+                playingCell.currentTime = 0;
+                _this.record.timeStop = new Date().getTime();
+                _this.record.getTimeAndKeyCode();
+            }
+        });
+    };
+    DrumCell.prototype.playSoundTouchSystem = function () {
+        var _this = this;
+        this.singleCell.addEventListener('touchstart', function () {
+            if ((DataArrays_1.SoundArray.find(function (SoundArray) { return SoundArray.TouchId === _this.singleCell.id; })) !== undefined) {
+                var playingCell = document.querySelector(".audio" + _this.singleCell.id.slice(1));
+                var backgroundColorOfCell = document.querySelector("#" + _this.singleCell.id);
+                backgroundColorOfCell.style.backgroundColor = '#8cc534';
+                playingCell.play();
+                _this.record.keyCode = DataArrays_1.SoundArray.find(function (SoundArray) { return SoundArray.TouchId === _this.singleCell.id; }).KeyCode;
+                _this.record.timeStart = new Date().getTime();
+            }
+        }, { passive: true });
+    };
+    DrumCell.prototype.pauseSoundTouchSystem = function () {
+        var _this = this;
+        this.singleCell.addEventListener('touchend', function () {
+            if ((DataArrays_1.SoundArray.find(function (SoundArray) { return SoundArray.TouchId === _this.singleCell.id; })) !== undefined) {
+                var playingCell = document.querySelector(".audio" + _this.singleCell.id.slice(1));
+                var backgroundColorOfCell = document.querySelector("#" + _this.singleCell.id);
+                backgroundColorOfCell.style.backgroundColor = '#202020';
+                playingCell.pause();
+                playingCell.currentTime = 0;
+                _this.record.timeStop = new Date().getTime();
+                _this.record.getTimeAndKeyCode();
+            }
+        });
+    };
     return DrumCell;
 }());
 exports.DrumCell = DrumCell;
@@ -758,7 +836,6 @@ exports.DrumCell = DrumCell;
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.DrumPanel = void 0;
 var CreateDrumCell_1 = __webpack_require__(/*! ./CreateDrumCell */ "./Main/CreateDrumCell.ts");
-var DataArrays_1 = __webpack_require__(/*! ./DataArrays */ "./Main/DataArrays.ts");
 var CreateMetronome_1 = __webpack_require__(/*! ./CreateMetronome */ "./Main/CreateMetronome.ts");
 var CreateRecording_1 = __webpack_require__(/*! ./CreateRecording */ "./Main/CreateRecording.ts");
 var DrumPanel = (function () {
@@ -785,63 +862,26 @@ var DrumPanel = (function () {
         this.recordField = document.createElement('div');
         this.recordField.classList.add('record-field');
         this.drumBoard.appendChild(this.recordField);
-        this.record = new CreateRecording_1.RecordField;
-        new CreateMetronome_1.Metronome;
+        this.record = new CreateRecording_1.Record;
         this.createCells();
+        this.cell.playSoundKeyBoard();
+        this.cell.pauseSoundKeyBoard();
+        new CreateMetronome_1.Metronome;
     }
     DrumPanel.prototype.createCells = function () {
         for (var index = 0; index < 9; index++) {
             this.cell = new CreateDrumCell_1.DrumCell();
             this.cell.singleCell.id = "c" + index;
             this.playField.appendChild(this.cell.singleCell);
-            this.addTextToCells(index);
-            this.addSoundToCells(index);
+            this.cell.addTextToCells(index);
+            this.cell.addSoundToCells(index);
+            this.cell.singleCell.appendChild(this.cell.titleCell);
+            this.cell.singleCell.appendChild(this.cell.infoCell);
+            this.cell.singleCell.appendChild(this.cell.audioCell);
+            this.cell.playSoundTouchSystem();
+            this.cell.pauseSoundTouchSystem();
+            this.cell.record = this.record;
         }
-    };
-    DrumPanel.prototype.addTextToCells = function (index) {
-        this.titleCell = document.createElement('h5');
-        this.titleCell.innerHTML = DataArrays_1.TitleArray[index].Name;
-        this.cell.singleCell.appendChild(this.titleCell);
-        this.infoCell = document.createElement('p');
-        this.infoCell.innerHTML = DataArrays_1.TitleArray[index].Info;
-        this.cell.singleCell.appendChild(this.infoCell);
-    };
-    DrumPanel.prototype.addSoundToCells = function (index) {
-        this.audioCell = document.createElement('audio');
-        this.audioCell.setAttribute('src', DataArrays_1.SoundArray[index].Src);
-        this.audioCell.classList.add('audio' + index);
-        this.cell.singleCell.appendChild(this.audioCell);
-    };
-    DrumPanel.prototype.playSound = function () {
-        var _this = this;
-        window.addEventListener('keydown', function (e) {
-            if ((DataArrays_1.SoundArray.find(function (SoundArray) { return SoundArray.KeyCode === e.keyCode; })) !== undefined) {
-                var cellIndex = DataArrays_1.SoundArray.find(function (SoundArray) { return SoundArray.KeyCode === e.keyCode; }).Index;
-                var keyDownFinder = DataArrays_1.SoundArray.find(function (SoundArray) { return SoundArray.KeyCode === e.keyCode; }).Id;
-                var playingCell = document.querySelector("" + keyDownFinder);
-                var backgroundColorOfCell = document.querySelector('#c' + cellIndex);
-                backgroundColorOfCell.style.backgroundColor = '#8cc534';
-                playingCell.play();
-                _this.record.keyCode = e.keyCode;
-                _this.record.timeStart = new Date().getTime();
-            }
-        });
-    };
-    DrumPanel.prototype.pauseSound = function () {
-        var _this = this;
-        window.addEventListener('keyup', function (e) {
-            if ((DataArrays_1.SoundArray.find(function (SoundArray) { return SoundArray.KeyCode === e.keyCode; })) !== undefined) {
-                var cellIndex = DataArrays_1.SoundArray.find(function (SoundArray) { return SoundArray.KeyCode === e.keyCode; }).Index;
-                var keyDownFinder = DataArrays_1.SoundArray.find(function (SoundArray) { return SoundArray.KeyCode === e.keyCode; }).Id;
-                var playingCell = document.querySelector("" + keyDownFinder);
-                var backgroundColorOfCell = document.querySelector('#c' + cellIndex);
-                backgroundColorOfCell.style.backgroundColor = '#202020';
-                playingCell.pause();
-                playingCell.currentTime = 0;
-                _this.record.timeStop = new Date().getTime();
-                _this.record.getTimeAndKeyCode();
-            }
-        });
     };
     return DrumPanel;
 }());
@@ -993,12 +1033,12 @@ exports.Metronome = Metronome;
 
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.RecordField = void 0;
+exports.Record = void 0;
 __webpack_require__(/*! ./../Styles/RecordingFieldStyles.scss */ "./Styles/RecordingFieldStyles.scss");
 var CreateTrack_1 = __webpack_require__(/*! ./CreateTrack */ "./Main/CreateTrack.ts");
 var DataArrays_1 = __webpack_require__(/*! ./DataArrays */ "./Main/DataArrays.ts");
-var RecordField = (function () {
-    function RecordField() {
+var Record = (function () {
+    function Record() {
         this.recordField = document.querySelector('.record-field');
         this.allTracksField = document.createElement('div');
         this.allTracksField.classList.add('all-tracks-field');
@@ -1010,7 +1050,7 @@ var RecordField = (function () {
         this.addBreakTimeAndPlayRecord();
         this.deleteRecord();
     }
-    RecordField.prototype.getTimeAndKeyCode = function () {
+    Record.prototype.getTimeAndKeyCode = function () {
         var data = {
             currentTime: this.timeStop - this.timeStart,
             key: this.keyCode,
@@ -1036,7 +1076,7 @@ var RecordField = (function () {
                 break;
         }
     };
-    RecordField.prototype.addBreakTimeAndPlayRecord = function () {
+    Record.prototype.addBreakTimeAndPlayRecord = function () {
         var _this = this;
         this.trackOne.playRecord.addEventListener('click', function () { return playRecordTrack(DataArrays_1.FirstRecordArray, _this.trackOne.isTrackFull); });
         this.trackTwo.playRecord.addEventListener('click', function () { return playRecordTrack(DataArrays_1.SecondRecordArray, _this.trackTwo.isTrackFull); });
@@ -1045,14 +1085,19 @@ var RecordField = (function () {
         function playRecordTrack(arrayOfTrack, isTrackFull) {
             if (isTrackFull === true) {
                 getBreakTime(arrayOfTrack);
+                console.log(DataArrays_1.FirstRecordArray);
                 var offSet_1 = 0;
                 arrayOfTrack.forEach(function (e) {
                     var soundId = DataArrays_1.SoundArray.find(function (SoundArray) { return SoundArray.KeyCode === e.key; }).Id;
                     var playCell = document.querySelector("" + soundId);
                     setTimeout(function () {
                         playCell.play();
-                        setTimeout(function () { return playCell.pause(); }, e.currentTime + offSet_1);
+                        console.log('Play: ', soundId);
                     }, e.breakTime + offSet_1);
+                    setTimeout(function () {
+                        playCell.pause();
+                        playCell.currentTime = 0;
+                    }, e.currentTime + e.breakTime + offSet_1);
                     offSet_1 += e.currentTime + e.breakTime;
                 });
             }
@@ -1065,12 +1110,13 @@ var RecordField = (function () {
             }
         }
     };
-    RecordField.prototype.deleteRecord = function () {
+    Record.prototype.deleteRecord = function () {
         var _this = this;
         this.trackOne.deleteRecord.addEventListener('click', function () {
             if (confirm('Do you want remove record on Track 1?')) {
                 DataArrays_1.FirstRecordArray.length = 0;
                 _this.trackOne.isTrackFull = false;
+                _this.trackOne.startRecord.style.color = '#ffffff';
             }
             else {
                 null;
@@ -1080,6 +1126,7 @@ var RecordField = (function () {
             if (confirm('Do you want remove record on Track 2?')) {
                 DataArrays_1.SecondRecordArray.length = 0;
                 _this.trackTwo.isTrackFull = false;
+                _this.trackTwo.startRecord.style.color = '#ffffff';
             }
             else {
                 null;
@@ -1089,6 +1136,7 @@ var RecordField = (function () {
             if (confirm('Do you want remove record on Track 3?')) {
                 DataArrays_1.ThirdRecordArray.length = 0;
                 _this.trackThree.isTrackFull = false;
+                _this.trackThree.startRecord.style.color = '#ffffff';
             }
             else {
                 null;
@@ -1098,15 +1146,16 @@ var RecordField = (function () {
             if (confirm('Do you want remove record on Track 4?')) {
                 DataArrays_1.FourthRecordArray.length = 0;
                 _this.trackFour.isTrackFull = false;
+                _this.trackFour.startRecord.style.color = '#ffffff';
             }
             else {
                 null;
             }
         });
     };
-    return RecordField;
+    return Record;
 }());
-exports.RecordField = RecordField;
+exports.Record = Record;
 
 
 /***/ }),
@@ -1210,15 +1259,15 @@ exports.TitleArray = [
     { Name: 'CLAP', Info: 'Press O', Index: 8 },
 ];
 exports.SoundArray = [
-    { KeyCode: 81, Src: '../Sounds/kick.wav', Index: 0, Id: '.audio0' },
-    { KeyCode: 87, Src: '../Sounds/tom.wav', Index: 1, Id: '.audio1' },
-    { KeyCode: 69, Src: '../Sounds/snare.wav', Index: 2, Id: '.audio2' },
-    { KeyCode: 82, Src: '../Sounds/hihat.wav', Index: 3, Id: '.audio3' },
-    { KeyCode: 84, Src: '../Sounds/openhat.wav', Index: 4, Id: '.audio4' },
-    { KeyCode: 89, Src: '../Sounds/ride.wav', Index: 5, Id: '.audio5' },
-    { KeyCode: 85, Src: '../Sounds/boom.wav', Index: 6, Id: '.audio6' },
-    { KeyCode: 73, Src: '../Sounds/tink.wav', Index: 7, Id: '.audio7' },
-    { KeyCode: 79, Src: '../Sounds/clap.wav', Index: 8, Id: '.audio8' },
+    { KeyCode: 81, Src: '../Sounds/kick.wav', Index: 0, Id: '.audio0', TouchId: 'c0' },
+    { KeyCode: 87, Src: '../Sounds/tom.wav', Index: 1, Id: '.audio1', TouchId: 'c1' },
+    { KeyCode: 69, Src: '../Sounds/snare.wav', Index: 2, Id: '.audio2', TouchId: 'c2' },
+    { KeyCode: 82, Src: '../Sounds/hihat.wav', Index: 3, Id: '.audio3', TouchId: 'c3' },
+    { KeyCode: 84, Src: '../Sounds/openhat.wav', Index: 4, Id: '.audio4', TouchId: 'c4' },
+    { KeyCode: 89, Src: '../Sounds/ride.wav', Index: 5, Id: '.audio5', TouchId: 'c5' },
+    { KeyCode: 85, Src: '../Sounds/boom.wav', Index: 6, Id: '.audio6', TouchId: 'c6' },
+    { KeyCode: 73, Src: '../Sounds/tink.wav', Index: 7, Id: '.audio7', TouchId: 'c7' },
+    { KeyCode: 79, Src: '../Sounds/clap.wav', Index: 8, Id: '.audio8', TouchId: 'c8' },
 ];
 exports.FirstRecordArray = new Array();
 exports.SecondRecordArray = new Array();
@@ -1308,9 +1357,7 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 __webpack_require__(/*! ../Styles/main.scss */ "./Styles/main.scss");
 __webpack_require__(/*! ./../Styles/DrumPanelStyles.scss */ "./Styles/DrumPanelStyles.scss");
 var CreateDrumPanel_1 = __webpack_require__(/*! ./CreateDrumPanel */ "./Main/CreateDrumPanel.ts");
-var drum = new CreateDrumPanel_1.DrumPanel;
-drum.playSound();
-drum.pauseSound();
+new CreateDrumPanel_1.DrumPanel;
 
 })();
 
