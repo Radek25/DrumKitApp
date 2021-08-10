@@ -17,7 +17,7 @@ export const SoundArray = [
     {KeyCode: 84, Src: './Sounds/openhat.wav', Index: 4, Id: '.audio4', TouchId: 'c4'},
     {KeyCode: 89, Src: './Sounds/ride.wav', Index: 5, Id: '.audio5', TouchId: 'c5'},
     {KeyCode: 85, Src: './Sounds/boom.wav', Index: 6, Id: '.audio6', TouchId: 'c6'},
-    {KeyCode: 73, Src: './Sounds/tink.wav', Index: 7, Id: '.audio7', TouchId: 'c7'},
+    {KeyCode: 73, Src: './Gif/tink.wav', Index: 7, Id: '.audio7', TouchId: 'c7'},
     {KeyCode: 79, Src: './Sounds/clap.wav', Index: 8, Id: '.audio8', TouchId: 'c8'},
 ]
 export let FirstRecordArray = new Array();
