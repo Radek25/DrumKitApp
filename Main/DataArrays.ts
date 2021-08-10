@@ -10,9 +10,9 @@ export const TitleArray = [
     {Name: 'CLAP', Info: 'Press O', Index: 8},
 ];
 export const SoundArray = [
-    {KeyCode: 81, Src: '../DrumKit/Sounds/kick.wav', Index: 0, Id: '.audio0', TouchId: 'c0'},
-    {KeyCode: 87, Src: '../DrumKit/Sounds/tom.wav', Index: 1, Id: '.audio1', TouchId: 'c1'},
-    {KeyCode: 69, Src: '../DrumKit/Sounds/snare.wav', Index: 2, Id: '.audio2', TouchId: 'c2'},
+    {KeyCode: 81, Src: '../Sounds/kick.wav', Index: 0, Id: '.audio0', TouchId: 'c0'},
+    {KeyCode: 87, Src: '../Sounds/tom.wav', Index: 1, Id: '.audio1', TouchId: 'c1'},
+    {KeyCode: 69, Src: '../Sounds/snare.wav', Index: 2, Id: '.audio2', TouchId: 'c2'},
     {KeyCode: 82, Src: '../DrumKit/Sounds/hihat.wav', Index: 3, Id: '.audio3', TouchId: 'c3'},
     {KeyCode: 84, Src: '../DrumKit/Sounds/openhat.wav', Index: 4, Id: '.audio4', TouchId: 'c4'},
     {KeyCode: 89, Src: '../DrumKit/Sounds/ride.wav', Index: 5, Id: '.audio5', TouchId: 'c5'},
