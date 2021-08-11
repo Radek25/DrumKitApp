@@ -23,7 +23,7 @@ export class Metronome{
 
         this.soundOfMetronome = document.createElement('audio');
         this.soundOfMetronome.id = 'sound-of-metronome';
-        this.soundOfMetronome.setAttribute('src', './../Sounds/tink.wav');
+        this.soundOfMetronome.setAttribute('src', '../Sounds/tink.wav');
         this.metronomeField.appendChild(this.soundOfMetronome);
 
         this.setMetronomeButton = document.createElement('button');
