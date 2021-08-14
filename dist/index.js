@@ -757,8 +757,10 @@ var DrumCell = (function () {
         }
     };
     DrumCell.prototype.addSoundToCells = function (index) {
+        console.log(DataArrays_1.SoundArray[index].Src);
         this.audioCell = document.createElement('audio');
         this.audioCell.setAttribute('src', DataArrays_1.SoundArray[index].Src);
+        console.log(DataArrays_1.SoundArray[index].Src);
         this.audioCell.classList.add('audio' + index);
     };
     DrumCell.prototype.playSoundKeyBoard = function () {
@@ -911,7 +913,7 @@ var Metronome = (function () {
         this.recordField.appendChild(this.metronomeField);
         this.soundOfMetronome = document.createElement('audio');
         this.soundOfMetronome.id = 'sound-of-metronome';
-        this.soundOfMetronome.setAttribute('src', './../Sounds/tink.wav');
+        this.soundOfMetronome.setAttribute('src', '../Sounds/tink.wav');
         this.metronomeField.appendChild(this.soundOfMetronome);
         this.setMetronomeButton = document.createElement('button');
         this.setMetronomeButton.classList.add('set-BPM-button');
@@ -1259,15 +1261,15 @@ exports.TitleArray = [
     { Name: 'CLAP', Info: 'Press O', Index: 8 },
 ];
 exports.SoundArray = [
-    { KeyCode: 81, Src: '../Sounds/kick.wav', Index: 0, Id: '.audio0', TouchId: 'c0' },
-    { KeyCode: 87, Src: '../Sounds/tom.wav', Index: 1, Id: '.audio1', TouchId: 'c1' },
-    { KeyCode: 69, Src: '../Sounds/snare.wav', Index: 2, Id: '.audio2', TouchId: 'c2' },
-    { KeyCode: 82, Src: '../Sounds/hihat.wav', Index: 3, Id: '.audio3', TouchId: 'c3' },
-    { KeyCode: 84, Src: '../Sounds/openhat.wav', Index: 4, Id: '.audio4', TouchId: 'c4' },
-    { KeyCode: 89, Src: '../Sounds/ride.wav', Index: 5, Id: '.audio5', TouchId: 'c5' },
-    { KeyCode: 85, Src: '../Sounds/boom.wav', Index: 6, Id: '.audio6', TouchId: 'c6' },
-    { KeyCode: 73, Src: '../Sounds/tink.wav', Index: 7, Id: '.audio7', TouchId: 'c7' },
-    { KeyCode: 79, Src: '../Sounds/clap.wav', Index: 8, Id: '.audio8', TouchId: 'c8' },
+    { KeyCode: 81, Src: 'https://radek25.github.io/DrumKitApp/Sounds/kick.wav', Index: 0, Id: '.audio0', TouchId: 'c0' },
+    { KeyCode: 87, Src: 'https://radek25.github.io/DrumKitApp/Sounds/tom.wav', Index: 1, Id: '.audio1', TouchId: 'c1' },
+    { KeyCode: 69, Src: 'https://radek25.github.io/DrumKitApp/Sounds/snare.wav', Index: 2, Id: '.audio2', TouchId: 'c2' },
+    { KeyCode: 82, Src: 'https://radek25.github.io/DrumKitApp/Sounds/hihat.wav', Index: 3, Id: '.audio3', TouchId: 'c3' },
+    { KeyCode: 84, Src: 'https://radek25.github.io/DrumKitApp/Sounds/openhat.wav', Index: 4, Id: '.audio4', TouchId: 'c4' },
+    { KeyCode: 89, Src: 'https://radek25.github.io/DrumKitApp/Sounds/ride.wav', Index: 5, Id: '.audio5', TouchId: 'c5' },
+    { KeyCode: 85, Src: 'https://radek25.github.io/DrumKitApp/Sounds/boom.wav', Index: 6, Id: '.audio6', TouchId: 'c6' },
+    { KeyCode: 73, Src: 'https://radek25.github.io/DrumKitApp/Sounds/tink.wav', Index: 7, Id: '.audio7', TouchId: 'c7' },
+    { KeyCode: 79, Src: 'https://radek25.github.io/DrumKitApp/Sounds/clap.wav', Index: 8, Id: '.audio8', TouchId: 'c8' },
 ];
 exports.FirstRecordArray = new Array();
 exports.SecondRecordArray = new Array();
