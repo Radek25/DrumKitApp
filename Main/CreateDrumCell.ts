@@ -30,7 +30,8 @@ export class DrumCell{
     }
     addSoundToCells(index: number): void{
         this.audioCell = document.createElement('audio');
-        this.audioCell.setAttribute('src', `${SoundArray[index].Src}`);
+        this.audioCell.setAttribute('src', SoundArray[index].Src);
+        console.log(SoundArray[index].Src);
         this.audioCell.classList.add('audio'+index);
     }
     playSoundKeyBoard(): void{
